@@ -1,5 +1,5 @@
+import 'package:auth_crud_map_template/core/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import '../utils/sizes.dart';
 
 class Responsive extends StatelessWidget {
   final Widget mobile;

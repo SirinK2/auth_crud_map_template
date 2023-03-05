@@ -1,3 +1,4 @@
+import 'package:auth_crud_map_template/core/theme/theme.dart';
 import 'package:auth_crud_map_template/features/auth/auth.dart';
 import 'package:flutter/material.dart';
 
@@ -12,9 +13,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeApp.lightTheme,
+      darkTheme:ThemeApp.darkTheme ,
       home: Auth()
     );
   }
