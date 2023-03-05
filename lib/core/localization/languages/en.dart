@@ -1,8 +1,8 @@
 const Map<String, String> en = {
-  "setting": "الاعدادت",
-  "settingLanguage": "اعدادات اللغه",
+  "setting": "setting",
+  "settingLanguage": "settingLanguage",
 //Auth String
-  "appName": "Mezwalah Website",
+  "appName": "Garage Template",
   "loginText": "Login",
   "signupText": "SignUp",
 
