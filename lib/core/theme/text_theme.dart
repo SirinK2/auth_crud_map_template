@@ -1,12 +1,18 @@
 import 'package:auth_crud_map_template/core/constants/colors_app.dart';
 import 'package:flutter/material.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomTextTheme {
-  static const textColorLight = blackColor;
+
+  static const textColorLight = whiteColor;
+  static const textColorDark = blackColor;
 
   static TextTheme get textThemeLight {
     return textTheme(textColor: textColorLight);
+  }
+
+  static TextTheme get textThemeDark {
+    return textTheme(textColor: textColorDark);
   }
 
   static TextTheme textTheme({required Color textColor}) {
@@ -14,102 +20,94 @@ class CustomTextTheme {
     const FontWeight medium = FontWeight.w500;
     const FontWeight regular = FontWeight.w400;
 
-    return const TextTheme(
-      headlineMedium: TextStyle(
-        fontFamily: 'Din',
+    return TextTheme(
+      headlineLarge: GoogleFonts.ubuntu(
         color: blackColor,
-        fontSize: 24,
-        fontWeight: regular,
-        letterSpacing: 0.0,
-      ),
-      displayLarge: TextStyle(
-        fontFamily: 'Din',
-        color: whiteColor,
-        fontSize: 48,
-        fontWeight: regular,
-        letterSpacing: 0.0,
-      ),
-      bodyLarge: TextStyle(
-        fontFamily: 'Din',
-        color: orangeColor,
-        fontSize: 20,
-        fontWeight: bold,
-        letterSpacing: 0.0,
-      ),
-      headlineSmall: TextStyle(
-        fontFamily: 'Din',
-        color: blackColor,
-        fontSize: 20,
-        fontWeight: regular,
-        letterSpacing: 0.0,
-      ),
-      displayMedium: TextStyle(
-        fontFamily: 'Din',
-        color: whiteColor,
         fontSize: 24,
         fontWeight: bold,
         letterSpacing: 0.0,
       ),
-      bodyMedium: TextStyle(
-        fontFamily: 'Din',
-        color: greyColor,
-        fontSize: 14,
-        fontWeight: regular,
-        letterSpacing: 0.0,
-      ),
-      labelLarge: TextStyle(
-        fontFamily: 'Din',
-        color: whiteColor,
-        fontSize: 14,
+      headlineMedium: GoogleFonts.ubuntu(
+        color: blackColor,
+        fontSize: 20,
         fontWeight: medium,
         letterSpacing: 0.0,
       ),
-      labelMedium: TextStyle(
-        fontFamily: 'Din',
-        color: greyColor,
-        fontSize: 12,
-        fontWeight: regular,
-        decoration: TextDecoration.underline,
-        letterSpacing: 0.0,
-      ),
-      bodySmall: TextStyle(
-        fontFamily: 'Din',
-        color: blackColor,
-        fontSize: 14,
-        fontWeight: regular,
-        letterSpacing: 0.0,
-      ),
-      labelSmall: TextStyle(
-        fontFamily: 'Din',
-        color: orangeColor,
-        fontSize: 12,
-        fontWeight: regular,
-        letterSpacing: 0.0,
-      ),
-      displaySmall: TextStyle(
-        fontFamily: 'Din',
-        color: blackColor,
-        fontSize: 20,
-        fontWeight: bold,
-        letterSpacing: 0.0,
-      ),
-      titleLarge: TextStyle(
-        fontFamily: 'Din',
+      headlineSmall: GoogleFonts.ubuntu(
         color: blackColor,
         fontSize: 16,
         fontWeight: regular,
         letterSpacing: 0.0,
       ),
-      titleMedium: TextStyle(
-        fontFamily: 'Din',
-        color: orangeColor,
-        fontSize: 15,
+      displayLarge: GoogleFonts.ubuntu(
+        color: whiteColor,
+        fontSize: 24,
+        fontWeight: bold,
+        letterSpacing: 0.0,
+      ),
+      displayMedium: GoogleFonts.ubuntu(
+        color: whiteColor,
+        fontSize: 20,
+        fontWeight: medium,
+        letterSpacing: 0.0,
+      ),
+      displaySmall: GoogleFonts.ubuntu(
+        color: whiteColor,
+        fontSize: 16,
         fontWeight: regular,
         letterSpacing: 0.0,
       ),
-      titleSmall: TextStyle(
-        fontFamily: 'Din',
+      bodyLarge: GoogleFonts.ubuntu(
         color: orangeColor,
+        fontSize: 24,
+        fontWeight: bold,
+        letterSpacing: 0.0,
+      ),
+      bodyMedium: GoogleFonts.ubuntu(
+        color: orangeColor,
+        fontSize: 20,
+        fontWeight: medium,
+        letterSpacing: 0.0,
+      ),
+      bodySmall: GoogleFonts.ubuntu(
+        color: orangeColor,
+        fontSize: 16,
+        fontWeight: regular,
+        letterSpacing: 0.0,
+      ),
+      labelLarge: GoogleFonts.ubuntu(
+        color: greyColor,
+        fontSize: 20,
+        fontWeight: bold,
+        letterSpacing: 0.0,
+      ),
+      labelMedium: GoogleFonts.ubuntu(
+        color: greyColor,
+        fontSize: 16,
+        fontWeight: medium,
+        decoration: TextDecoration.underline,
+        letterSpacing: 0.0,
+      ),
+      labelSmall: GoogleFonts.ubuntu(
+        color: greyColor,
+        fontSize: 12,
+        fontWeight: regular,
+        letterSpacing: 0.0,
+      ),
+      titleLarge: GoogleFonts.ubuntu(
+        color: textColor,
+        fontSize: 24,
+        fontWeight: bold,
+        letterSpacing: 0.0,
+      ),
+      titleMedium: GoogleFonts.ubuntu(
+        color: textColor,
+        fontSize: 20,
+        fontWeight: medium,
+        letterSpacing: 0.0,
+      ),
+      titleSmall: GoogleFonts.ubuntu(
+        color: textColor,
         fontSize: 16,
         fontWeight: regular,
         letterSpacing: 0.0,
@@ -117,4 +115,3 @@ class CustomTextTheme {
     );
   }
 }
-
