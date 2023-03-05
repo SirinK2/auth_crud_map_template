@@ -2,9 +2,9 @@ const Map<String, String> ar = {
   "setting": "الاعدادت",
   "settingLanguage": "اعدادات اللغه",
 //Auth String
-  "appName": "مزولة",
+  "appName": "Garage Template",
   "loginText": "تسجيل دخول",
-  "signupText": "SignUp",
+  "signupText": "تسجيل",
 
 // -- Login
   "loginTitle": "Welcome Back,",

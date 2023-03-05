@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import '../languages/ar.dart';
 import '../languages/en.dart';
 
-class MyLocale implements Translations {
+class TranslationsMap implements Translations {
   @override
   Map<String, Map<String, String>> get keys => {
         'en': en,

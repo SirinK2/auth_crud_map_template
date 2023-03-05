@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../controllers/localization_language.dart';
+import '../../controllers/localization_controller.dart';
 
 
 class SettingScreen extends StatelessWidget {
@@ -8,7 +8,7 @@ class SettingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.find<LocalizationLanguageController>();
+    final controller = Get.find<LocalizationController>();
     String dropdownValue = controller.initialLanguage.toString();
 
     var items = [
