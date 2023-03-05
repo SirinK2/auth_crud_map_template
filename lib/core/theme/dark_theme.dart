@@ -2,7 +2,7 @@ import 'package:auth_crud_map_template/core/constants/colors_app.dart';
 import 'package:flutter/material.dart';
 import 'text_theme.dart';
 
-ThemeData LightThemeData () {
+ThemeData DarkThemeData() {
   return ThemeData(
     fontFamily: 'Din',
     primaryColor: whiteColor,
@@ -49,16 +49,16 @@ ThemeData LightThemeData () {
       contentTextStyle: TextStyle(),
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
-        bottomLeft: Radius.circular(40),
-        topRight: Radius.circular(40),
-      )),
+            bottomLeft: Radius.circular(40),
+            topRight: Radius.circular(40),
+          )),
     ),
 
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
             minimumSize: const Size(382, 41),
             shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
             foregroundColor: whiteColor,
             elevation: 0.4,
             backgroundColor: blackColor,
@@ -67,7 +67,7 @@ ThemeData LightThemeData () {
     outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
             shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
             foregroundColor: whiteColor,
             side: const BorderSide(color: greyColor),
             padding: const EdgeInsets.symmetric(vertical: 20))),

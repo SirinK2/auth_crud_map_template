@@ -1,5 +1,6 @@
+import 'package:auth_crud_map_template/core/constants/colors_app.dart';
 import 'package:flutter/material.dart';
-import '../theme.dart';
+
 
 class CustomTextTheme {
   static const textColorLight = blackColor;
@@ -13,43 +14,43 @@ class CustomTextTheme {
     const FontWeight medium = FontWeight.w500;
     const FontWeight regular = FontWeight.w400;
 
-    return TextTheme(
-      headlineMedium: const TextStyle(
+    return const TextTheme(
+      headlineMedium: TextStyle(
         fontFamily: 'Din',
         color: blackColor,
         fontSize: 24,
         fontWeight: regular,
         letterSpacing: 0.0,
       ),
-      displayLarge: const TextStyle(
+      displayLarge: TextStyle(
         fontFamily: 'Din',
         color: whiteColor,
         fontSize: 48,
         fontWeight: regular,
         letterSpacing: 0.0,
       ),
-      bodyLarge: const TextStyle(
+      bodyLarge: TextStyle(
         fontFamily: 'Din',
         color: orangeColor,
         fontSize: 20,
         fontWeight: bold,
         letterSpacing: 0.0,
       ),
-      headlineSmall: const TextStyle(
+      headlineSmall: TextStyle(
         fontFamily: 'Din',
         color: blackColor,
         fontSize: 20,
         fontWeight: regular,
         letterSpacing: 0.0,
       ),
-      displayMedium: const TextStyle(
+      displayMedium: TextStyle(
         fontFamily: 'Din',
         color: whiteColor,
         fontSize: 24,
         fontWeight: bold,
         letterSpacing: 0.0,
       ),
-      bodyMedium: const TextStyle(
+      bodyMedium: TextStyle(
         fontFamily: 'Din',
         color: greyColor,
         fontSize: 14,
@@ -63,7 +64,7 @@ class CustomTextTheme {
         fontWeight: medium,
         letterSpacing: 0.0,
       ),
-      labelMedium: const TextStyle(
+      labelMedium: TextStyle(
         fontFamily: 'Din',
         color: greyColor,
         fontSize: 12,
@@ -71,42 +72,42 @@ class CustomTextTheme {
         decoration: TextDecoration.underline,
         letterSpacing: 0.0,
       ),
-      bodySmall: const TextStyle(
+      bodySmall: TextStyle(
         fontFamily: 'Din',
         color: blackColor,
         fontSize: 14,
         fontWeight: regular,
         letterSpacing: 0.0,
       ),
-      labelSmall: const TextStyle(
+      labelSmall: TextStyle(
         fontFamily: 'Din',
         color: orangeColor,
         fontSize: 12,
         fontWeight: regular,
         letterSpacing: 0.0,
       ),
-      displaySmall: const TextStyle(
+      displaySmall: TextStyle(
         fontFamily: 'Din',
         color: blackColor,
         fontSize: 20,
         fontWeight: bold,
         letterSpacing: 0.0,
       ),
-      titleLarge: const TextStyle(
+      titleLarge: TextStyle(
         fontFamily: 'Din',
         color: blackColor,
         fontSize: 16,
         fontWeight: regular,
         letterSpacing: 0.0,
       ),
-      titleMedium: const TextStyle(
+      titleMedium: TextStyle(
         fontFamily: 'Din',
         color: orangeColor,
         fontSize: 15,
         fontWeight: regular,
         letterSpacing: 0.0,
       ),
-      titleSmall: const TextStyle(
+      titleSmall: TextStyle(
         fontFamily: 'Din',
         color: orangeColor,
         fontSize: 16,
