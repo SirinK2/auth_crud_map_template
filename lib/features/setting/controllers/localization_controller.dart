@@ -1,7 +1,9 @@
-import 'package:auth_crud_map_template/core/utils/keys.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+
+import '../../../core/constants/keys.dart';
 
 class LocalizationController extends GetxController {
   GetStorage localeStorage = GetStorage();
