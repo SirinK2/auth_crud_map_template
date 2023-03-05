@@ -1,4 +1,5 @@
 import 'package:auth_crud_map_template/core/routes/route.dart';
+
 import 'package:auth_crud_map_template/core/theme/theme.dart';
 import 'package:auth_crud_map_template/features/auth/auth.dart';
 
@@ -29,7 +30,6 @@ class MyApp extends StatelessWidget {
       darkTheme:ThemeApp.darkTheme ,
       initialRoute: Routes.translation,
       getPages: AppRoutes.routes,
-
     );
   }
 }
