@@ -40,7 +40,7 @@ class OtpEmailScreen extends StatelessWidget {
                 style: theme.headlineSmall,
               ),
               const SizedBox(height: 10),
-              BiludTimerWidget(
+              BuildTimerWidget(
                 authController: authController,
               ),
               const SizedBox(height: 50),
