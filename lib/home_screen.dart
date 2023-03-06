@@ -1,3 +1,4 @@
+import 'package:auth_crud_map_template/common/header_widget.dart';
 import 'package:auth_crud_map_template/core/constants/colors_app.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -13,10 +14,10 @@ class HomeScreen extends StatelessWidget {
         body: Align(
             alignment: Alignment.center,
             child: SizedBox(
-              width: 382,
+              width: 390,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
+                children: <Widget>[
                   ElevatedButton(
                       onPressed: () {
                         Get.offNamed(Routes.loginScreen);
@@ -26,25 +27,19 @@ class HomeScreen extends StatelessWidget {
                       )),
                   const SizedBox(height: 10),
                   ElevatedButton(
-                      onPressed: () {
-                    
-                      },
+                      onPressed: () {},
                       child: Text(
                         'Profile',
                       )),
                   const SizedBox(height: 10),
                   ElevatedButton(
-                      onPressed: () {
-
-                      },
+                      onPressed: () {},
                       child: Text(
                         'Crud',
                       )),
                   const SizedBox(height: 10),
                   ElevatedButton(
-                      onPressed: () {
-
-                      },
+                      onPressed: () {},
                       child: Text(
                         'Current location',
                       )),

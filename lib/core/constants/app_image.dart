@@ -6,5 +6,6 @@ class AppImages {
 // Log In Screen
   static String appleLogo = 'assets/images/Apple.png';
   static String googleLogo = 'assets/images/Google.png';
+  static String successLogo =  "assets/images/success.gif";
 
 }
