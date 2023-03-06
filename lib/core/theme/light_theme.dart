@@ -36,8 +36,9 @@ ThemeData LightThemeData() {
     //
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.transparent,
-      iconTheme: IconThemeData(color: whiteColor, size: 30),
-      elevation: 0.01,
+      iconTheme: IconThemeData(color: orangeColor, size: 30),
+      elevation: 0.0,
+      shadowColor: greyColor,
       centerTitle: true,
     ),
     //
