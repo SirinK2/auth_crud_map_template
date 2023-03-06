@@ -6,9 +6,7 @@ import 'package:auth_crud_map_template/core/routes/route.dart';
 import 'package:auth_crud_map_template/features/auth/controller/auth_controller.dart';
 import 'package:auth_crud_map_template/features/auth/view/widget/checkbox_widget.dart';
 import 'package:auth_crud_map_template/features/auth/view/widget/social_button_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 
 class SignUpScreen extends StatelessWidget {

@@ -34,7 +34,7 @@ class AppRoutes {
         binding: Binding()),
     GetPage(
         name: Routes.termsAndConditions,
-        page: () => TermsAndConditionsScreen(),
+        page: () => const TermsAndConditionsScreen(),
         binding: Binding()),
     GetPage(
         name: Routes.otpEmailScreen,
@@ -46,7 +46,7 @@ class AppRoutes {
         binding: Binding()),
     GetPage(
         name: Routes.successfullyScreen,
-        page: () => SuccessfullyScreen(),
+        page: () => const SuccessfullyScreen(),
         binding: Binding()),
   ];
 }

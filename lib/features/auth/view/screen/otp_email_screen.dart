@@ -75,14 +75,13 @@ class OtpEmailScreen extends StatelessWidget {
                                   color: Colors.green[400]),
                             ),
                             onPressed: () {
-
                             },
                           )),
                   )),
               const SizedBox(height: 50),
               ElevatedButton(onPressed: (){
                 Get.offNamed(Routes.newPasswordScreen);
-              }, child: Text('Send'))
+              }, child: const Text('Send'))
             ]),
       ),
     ));

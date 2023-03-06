@@ -1,6 +1,5 @@
 import 'package:auth_crud_map_template/core/routes/route.dart';
 import 'package:auth_crud_map_template/core/theme/theme.dart';
-import 'package:auth_crud_map_template/features/auth/view/screen/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';

@@ -4,7 +4,7 @@ import 'package:timer_count_down/timer_count_down.dart';
 import '../../controller/auth_controller.dart';
 
 class BiludTimerWidget extends StatelessWidget {
-  BiludTimerWidget({
+ const BiludTimerWidget({
     Key? key, required this.authController,
   }) : super(key: key);
   final AuthController authController;
