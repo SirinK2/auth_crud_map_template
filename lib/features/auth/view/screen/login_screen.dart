@@ -6,8 +6,8 @@ import 'package:auth_crud_map_template/features/auth/view/widget/checkbox_widget
 import 'package:auth_crud_map_template/features/auth/view/widget/social_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../logic/controller/auth_controller.dart';
+
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
