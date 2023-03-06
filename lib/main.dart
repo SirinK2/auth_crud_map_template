@@ -1,10 +1,13 @@
 import 'package:auth_crud_map_template/core/routes/route.dart';
 import 'package:auth_crud_map_template/core/theme/theme.dart';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import 'package:firebase_core/firebase_core.dart';
 =======
 import 'package:auth_crud_map_template/features/auth/view/screen/signup_screen.dart';
 >>>>>>> 95eda9c (feat: add Auth ui)
+=======
+>>>>>>> 6eae21f (enh: add all the ui for auth feat)
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';

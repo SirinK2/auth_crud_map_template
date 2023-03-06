@@ -64,7 +64,7 @@ class AppRoutes {
         binding: Binding()),
     GetPage(
         name: Routes.termsAndConditions,
-        page: () => TermsAndConditionsScreen(),
+        page: () => const TermsAndConditionsScreen(),
         binding: Binding()),
     GetPage(
         name: Routes.otpEmailScreen,
@@ -76,7 +76,7 @@ class AppRoutes {
         binding: Binding()),
     GetPage(
         name: Routes.successfullyScreen,
-        page: () => SuccessfullyScreen(),
+        page: () => const SuccessfullyScreen(),
         binding: Binding()),
 >>>>>>> 11e2e2d (enh: add all the ui for auth feat)
   ];
