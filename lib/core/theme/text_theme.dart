@@ -4,8 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 class CustomTextTheme {
 
-  static const textColorLight = whiteColor;
-  static const textColorDark = blackColor;
+  static const textColorLight = blackColor;
+  static const textColorDark = whiteColor;
 
   static TextTheme get textThemeLight {
     return textTheme(textColor: textColorLight);
@@ -35,7 +35,7 @@ class CustomTextTheme {
       ),
       headlineSmall: GoogleFonts.ubuntu(
         color: blackColor,
-        fontSize: 16,
+        fontSize: 12,
         fontWeight: regular,
         letterSpacing: 0.0,
       ),
@@ -59,19 +59,19 @@ class CustomTextTheme {
       ),
       bodyLarge: GoogleFonts.ubuntu(
         color: orangeColor,
-        fontSize: 24,
+        fontSize: 20,
         fontWeight: bold,
         letterSpacing: 0.0,
       ),
       bodyMedium: GoogleFonts.ubuntu(
         color: orangeColor,
-        fontSize: 20,
+        fontSize: 16,
         fontWeight: medium,
         letterSpacing: 0.0,
       ),
       bodySmall: GoogleFonts.ubuntu(
         color: orangeColor,
-        fontSize: 16,
+        fontSize: 12,
         fontWeight: regular,
         letterSpacing: 0.0,
       ),
