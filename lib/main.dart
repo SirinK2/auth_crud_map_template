@@ -1,17 +1,19 @@
 import 'package:auth_crud_map_template/core/routes/route.dart';
-
 import 'package:auth_crud_map_template/core/theme/theme.dart';
-import 'package:auth_crud_map_template/features/auth/auth.dart';
-
-import 'package:auth_crud_map_template/core/routes/route.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'core/localization/translations/translations_map.dart';
 import 'features/setting/controllers/localization_controller.dart';
+import 'firebase_options.dart';
 
 void main() async {
   await GetStorage.init();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(MyApp());
 }
 
@@ -26,8 +28,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       locale: controller.initialLanguage,
       translations: TranslationsMap(),
-      theme: ThemeApp.lightTheme,
-      darkTheme:ThemeApp.darkTheme ,
+      // theme: ThemeApp.lightTheme,
+      // darkTheme:ThemeApp.darkTheme ,
       initialRoute: Routes.translation,
       getPages: AppRoutes.routes,
     );
