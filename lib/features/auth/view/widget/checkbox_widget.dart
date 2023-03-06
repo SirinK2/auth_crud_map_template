@@ -1,5 +1,7 @@
 import 'package:auth_crud_map_template/core/constants/colors_app.dart';
+import 'package:auth_crud_map_template/core/routes/route.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CheckBoxWidget extends StatelessWidget {
   const CheckBoxWidget(
@@ -30,7 +32,9 @@ class CheckBoxWidget extends StatelessWidget {
           style: textTheme.headlineSmall,
         ),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.offNamed(Routes.termsAndConditions);
+          },
           child: Text(
             supTitle!,
             style: textTheme.bodyMedium,
