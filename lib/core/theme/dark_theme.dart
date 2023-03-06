@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'text_theme.dart';
 
-ThemeData DarkThemeData() {
+ThemeData darkThemeData() {
   return ThemeData(
     fontFamily: GoogleFonts.ubuntu.toString(),
     primaryColor: whiteColor,
