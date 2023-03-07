@@ -11,37 +11,33 @@ class SuccessfullyScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
     return Scaffold(
-        body: Align(
-            alignment: Alignment.center,
-            child: SizedBox(
-              width: 390,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  HeaderWidget(
-                    onPressed: () {
-                      Get.offNamed(Routes.loginScreen);
-                    },
-                  ),
-                  const SizedBox(height: 50),
-                  Image.asset(
-                    AppImages.successLogo,
-                    height: 104,
-                    width: 104,
-                  ),
-                  const SizedBox(height: 10),
-                  Text(
-                    'Successfully',
-                    style: theme.headlineMedium,
-                  ),
-                  const SizedBox(height: 10),
-                  Text(
-                    'Your password has been reset successfully',
-                    style: theme.bodyMedium,
-                  ),
-                  const SizedBox(height: 10),
-                ],
-              ),
-            )));
+        body: Column(children: [
+      HeaderWidget(
+        onPressed: () {
+          Get.offNamed(Routes.loginScreen);
+        },
+      ),
+      Container(
+        padding: EdgeInsets.symmetric(horizontal: 20),
+        width: 390,
+        height: 300,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            const SizedBox(height: 50),
+            Image.asset(
+              AppImages.successLogo,
+              height: 104,
+              width: 104,
+            ),
+            Text(
+              'Successfully',
+              style: theme.headlineMedium,
+            ),
+          ],
+        ),
+      )
+    ]));
   }
 }

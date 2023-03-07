@@ -7,8 +7,8 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import '../../controller/auth_controller.dart';
 
-class ForgotPasswordScreen extends StatelessWidget {
-  ForgotPasswordScreen({
+class LogInWithPhoneScreen extends StatelessWidget {
+  LogInWithPhoneScreen({
     super.key,
   });
 
@@ -32,14 +32,18 @@ class ForgotPasswordScreen extends StatelessWidget {
                     SendToWidget(
                       authController: authController,
                       onPressed: () {
-                        Get.offNamed(Routes.loginScreen);
+                        Get.offNamed(Routes.otpPhoneScreen);
                       },
-                      text: 'Enter your Email ',
-                      label: 'Email',
+                      text: 'Enter your Phone Number ',
+                      label: 'Phone Number',
                       validator: (value) {
-                        if (!RegExp(Validation.validationEmail)
+                        if (value.toString().isEmpty) {
+                          return 'Enter your Password';
+                        } else if (!RegExp(Validation.validationPhoneNumber)
                             .hasMatch(value)) {
-                          return 'Invalid email';
+                          return "Please enter a correct Number";
+                        } else if (value.toString().length < 10) {
+                          return 'Phone Number should be at least 10 long ';
                         } else {
                           return null;
                         }
