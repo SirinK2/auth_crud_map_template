@@ -2,11 +2,12 @@ import 'package:auth_crud_map_template/common/text_field_widget.dart';
 import 'package:auth_crud_map_template/core/constants/app_image.dart';
 import 'package:auth_crud_map_template/core/constants/validation.dart';
 import 'package:auth_crud_map_template/core/routes/route.dart';
-import 'package:auth_crud_map_template/features/auth/controller/auth_controller.dart';
 import 'package:auth_crud_map_template/features/auth/view/widget/checkbox_widget.dart';
 import 'package:auth_crud_map_template/features/auth/view/widget/social_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../logic/controller/auth_controller.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
@@ -100,7 +101,9 @@ class LoginScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   SocialButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                     await authController.signInWithGoogle();
+                    },
                     text: 'Sign Up with Google',
                     images: AppImages.googleLogo,
                   ),
