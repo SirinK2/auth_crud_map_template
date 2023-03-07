@@ -91,7 +91,11 @@ class AppRoutes {
         name: Routes.logInWithPhoneScreen,
         page: () => LogInWithPhoneScreen(),
         binding: Binding()),
+<<<<<<< HEAD
 >>>>>>> 8c30965 (enh: add all the ui for auth feat)
+=======
+
+>>>>>>> d03e80e (fix: conflict)
   ];
 }
 
@@ -119,4 +123,8 @@ class Routes {
   static const profileScreen = '/profile_screen';
   static const logInWithPhoneScreen = '/login_with_phone_screen';
 }
+<<<<<<< HEAD
 >>>>>>> 11e2e2d (enh: add all the ui for auth feat)
+=======
+
+>>>>>>> d03e80e (fix: conflict)

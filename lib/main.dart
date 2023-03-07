@@ -4,6 +4,7 @@ import 'package:auth_crud_map_template/core/theme/theme.dart';
 <<<<<<< HEAD
 <<<<<<< HEAD
 import 'package:firebase_core/firebase_core.dart';
+<<<<<<< HEAD
 =======
 import 'package:auth_crud_map_template/features/auth/view/screen/signup_screen.dart';
 >>>>>>> 95eda9c (feat: add Auth ui)
@@ -12,6 +13,9 @@ import 'package:auth_crud_map_template/features/auth/view/screen/signup_screen.d
 =======
 import 'package:firebase_core/firebase_core.dart';
 >>>>>>> 7db8447 (feat: firebase)
+=======
+
+>>>>>>> d03e80e (fix: conflict)
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';

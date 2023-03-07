@@ -11,6 +11,7 @@ import 'package:get/get.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
+
   final formKey = GlobalKey<FormState>();
   final authController = Get.find<AuthController>();
   @override
@@ -150,6 +151,9 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
           ));
+
+
+
     });
   }
 }

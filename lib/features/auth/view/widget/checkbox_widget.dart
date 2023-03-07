@@ -3,6 +3,7 @@ import 'package:auth_crud_map_template/core/routes/route.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+
 class CheckBoxWidget extends StatelessWidget {
   const CheckBoxWidget(
       {Key? key,
@@ -19,6 +20,7 @@ class CheckBoxWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
@@ -38,6 +40,7 @@ class CheckBoxWidget extends StatelessWidget {
           child: Text(
             supTitle!,
             style: theme.bodyMedium,
+
           ),
         )
       ],

@@ -4,11 +4,13 @@ import 'package:get/get.dart';
 
 
 class SignInWithButton extends StatelessWidget {
+
   final String text;
   final Function() onPressed;
   final String images;
 
   const SignInWithButton(
+
       {required this.onPressed,
       required this.text,
       Key? key,

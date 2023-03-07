@@ -5,6 +5,7 @@ import 'package:timer_count_down/timer_controller.dart';
 class AuthController extends GetxController
     with GetSingleTickerProviderStateMixin {
 
+// <<<<<<< HEAD
   //CheckBox
   bool isChecked = false;
 
@@ -38,6 +39,16 @@ class AuthController extends GetxController
 
 //for controllers in log in
   TextEditingController nameController = TextEditingController();
+// =======
+//   //
+//   bool isVisibility = false;
+//   bool isChecked = false;
+//
+//
+// //
+//   TextEditingController firstNameController = TextEditingController();
+//   TextEditingController lastNameController = TextEditingController();
+// >>>>>>> 7dde245 (fix: conflict)
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController checkPasswordController = TextEditingController();
@@ -50,13 +61,18 @@ class AuthController extends GetxController
 
 
 //fun for Password icon
+
   void visibility() {
     isVisibility = !isVisibility;
     update();
   }
 
 
+// <<<<<<< HEAD
 //fun for CheckBox
+// =======
+//   //
+// >>>>>>> 7dde245 (fix: conflict)
   void checkBox(bool val) {
     isChecked = val;
     update();
