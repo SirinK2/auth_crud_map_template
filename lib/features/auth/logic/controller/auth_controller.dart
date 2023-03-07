@@ -100,7 +100,7 @@ class AuthController extends GetxController {
     String phoneNum,
   ) async {
     await _authRepo.signInWithPhoneNumber(
-      phoneNumber: '',
+      phoneNumber: phoneNum,
       onDone: (String? uid) {
         if (uid != null) {
           print('uid $uid');

@@ -1,7 +1,6 @@
 import 'package:auth_crud_map_template/features/auth/view/screen/forgot_password_screen.dart';
 import 'package:auth_crud_map_template/features/auth/view/screen/login_screen.dart';
 import 'package:auth_crud_map_template/features/auth/view/screen/login_with_phone_screen.dart';
-import 'package:auth_crud_map_template/features/auth/view/screen/new_pasword_screen.dart';
 import 'package:auth_crud_map_template/features/auth/view/screen/otp_phone_screen.dart';
 import 'package:auth_crud_map_template/features/auth/view/screen/signup_screen.dart';
 <<<<<<< HEAD
@@ -79,10 +78,10 @@ class AppRoutes {
         name: Routes.otpPhoneScreen,
         page: () => OtpPhoneScreen(),
         binding: Binding()),
-    GetPage(
-        name: Routes.newPasswordScreen,
-        page: () => NewPasswordScreen(),
-        binding: Binding()),
+    // GetPage(
+    //     name: Routes.newPasswordScreen,
+    //     page: () => NewPasswordScreen(),
+    //     binding: Binding()),
     GetPage(
         name: Routes.successfullyScreen,
         page: () => const SuccessfullyScreen(),

@@ -59,7 +59,25 @@ class AuthRepo {
     required String phoneNumber,
     required Function(String?) onDone,
   }) async {
-    await firebaseAuth.signInWithPhoneNumber(phoneNumber);
+   await firebaseAuth.verifyPhoneNumber(
+        phoneNumber: phoneNumber,
+        verificationCompleted: (PhoneAuthCredential credential) {
+          print('PhoneAuthCredential $credential');
+
+        },
+        verificationFailed: (FirebaseAuthException e) {
+          print('FirebaseAuthException $e');
+
+        },
+        codeSent: (String verificationId, int? resendToken) {
+
+        },
+        codeAutoRetrievalTimeout: (String verificationId) {
+
+        },
+     timeout: const Duration(seconds: 60)
+
+    );
   }
 
   signInWithGoogle({
