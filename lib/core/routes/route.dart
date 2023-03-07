@@ -27,6 +27,7 @@ class AppRoutes {
     ),
     GetPage(
 <<<<<<< HEAD
+<<<<<<< HEAD
         name: Routes.settingScreen,
 =======
         name: Routes.translation,
@@ -39,6 +40,12 @@ class AppRoutes {
         page: () => const SettingScreen(),
         binding: Binding()),
 >>>>>>> 11e2e2d (enh: add all the ui for auth feat)
+=======
+        name: Routes.settingScreen,
+        page: ()=> const SettingScreen(),
+      binding: Binding()
+    ),
+>>>>>>> d487593 (feat: google login)
     GetPage(
         name: Routes.loginScreen,
         page: () => LoginScreen(),
@@ -95,12 +102,17 @@ class AppRoutes {
 >>>>>>> 8c30965 (enh: add all the ui for auth feat)
 =======
 
+<<<<<<< HEAD
 >>>>>>> d03e80e (fix: conflict)
+=======
+
+>>>>>>> d487593 (feat: google login)
   ];
 }
 
 class Routes {
   static const homeScreen = '/home_screen';
+<<<<<<< HEAD
 <<<<<<< HEAD
   static const settingScreen = '/setting_screen';
   static const loginScreen = '/login_screen';
@@ -108,6 +120,9 @@ class Routes {
   static const profileScreen = '/profile_screen';
 =======
   static const translation = '/translation';
+=======
+  static const settingScreen = '/setting_screen';
+>>>>>>> d487593 (feat: google login)
   static const loginScreen = '/login_screen';
   static const signScreen = '/signup_screen';
 <<<<<<< HEAD
