@@ -4,14 +4,15 @@ import 'package:timer_count_down/timer_count_down.dart';
 import '../../controller/auth_controller.dart';
 
 class BuildTimerWidget extends StatelessWidget {
- const BuildTimerWidget({
-    Key? key, required this.authController,
+  const BuildTimerWidget({
+    Key? key,
+    required this.authController,
   }) : super(key: key);
   final AuthController authController;
 
   @override
   Widget build(BuildContext context) {
-    final theme=Theme.of(context).textTheme;
+    final theme = Theme.of(context).textTheme;
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -30,7 +31,6 @@ class BuildTimerWidget extends StatelessWidget {
             interval: const Duration(seconds: 1),
             onFinished: () {
               authController.resend.value = !authController.resend.value;
-
             },
           );
         }),

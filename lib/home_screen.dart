@@ -24,7 +24,9 @@ class HomeScreen extends StatelessWidget {
                       )),
                   const SizedBox(height: 10),
                   ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.offNamed(Routes.profileScreen);
+                      },
                       child: const Text(
                         'Profile',
                       )),

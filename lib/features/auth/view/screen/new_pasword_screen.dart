@@ -19,105 +19,111 @@ class NewPasswordScreen extends StatelessWidget {
     final theme = Theme.of(context).textTheme;
     return GetBuilder<AuthController>(builder: (_) {
       return Scaffold(
-          body: Form(
-              key: formKey,
-              child: Align(
-                  alignment: Alignment.center,
-                  child: SizedBox(
-                      width: 390,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: <Widget>[
-                          HeaderWidget(
-                            onPressed: () {
-                              Get.offNamed(Routes.loginScreen);
-                            },
-                          ),
-                          const SizedBox(height: 50),
-                          Text(
-                            'New Password',
-                            style: theme.headlineMedium,
-                          ),
-                          const SizedBox(height: 10),
-                          Text(
-                            'Set the new password for your account ',
-                            style: theme.bodyMedium,
-                          ),
-                          const SizedBox(height: 50),
-                          TextFieldWidget(
-                            controller: authController.passwordController,
-                            obscureText:
-                                authController.isVisibility ? false : true,
-                            validator: (value) {
-                              if (value.toString().isEmpty) {
-                                return 'Enter your Password';
-                              } else if (!RegExp(Validation.validationPassword)
-                                  .hasMatch(value)) {
-                                return "Please enter a correct Password";
-                              } else if (value.toString().length < 7) {
-                                return 'Passwords should be at least 8 characters long ';
-                              } else {
-                                return null;
-                              }
-                            },
-                            suffixIcon: IconButton(
-                              onPressed: () {
-                                authController.visibility();
+          body: SingleChildScrollView(
+              child: Form(
+                  key: formKey,
+                  child: Column(children: [
+                    HeaderWidget(
+                      onPressed: () {
+                        Get.offNamed(Routes.loginScreen);
+                      },
+                    ),
+                    Container(
+                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        width: 390,
+                        height: 400,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            const SizedBox(height: 50),
+                            Text(
+                              'New Password',
+                              style: theme.headlineMedium,
+                            ),
+                          
+                            Text(
+                              'Set the new password for your account ',
+                              style: theme.bodyMedium,
+                            ),
+                            const SizedBox(height: 50),
+                            TextFieldWidget(
+                              controller: authController.passwordController,
+                              obscureText:
+                                  authController.isVisibility ? false : true,
+                              validator: (value) {
+                                if (value.toString().isEmpty) {
+                                  return 'Enter your Password';
+                                } else if (!RegExp(
+                                        Validation.validationPassword)
+                                    .hasMatch(value)) {
+                                  return "Please enter a correct Password";
+                                } else if (value.toString().length < 7) {
+                                  return 'Passwords should be at least 8 characters long ';
+                                } else {
+                                  return null;
+                                }
                               },
-                              icon: authController.isVisibility
-                                  ? const Icon(
-                                      Icons.visibility_off,
-                                    )
-                                  : const Icon(
-                                      Icons.visibility,
-                                    ),
+                              suffixIcon: IconButton(
+                                onPressed: () {
+                                  authController.visibility();
+                                },
+                                icon: authController.isVisibility
+                                    ? const Icon(
+                                        Icons.visibility_off,
+                                      )
+                                    : const Icon(
+                                        Icons.visibility,
+                                      ),
+                              ),
+                              prefixIcon: const Icon(
+                                Icons.lock,
+                              ),
+                              label: 'Password',
                             ),
-                            prefixIcon: const Icon(
-                              Icons.lock,
-                            ),
-                            label: 'Password',
-                          ),
-                          const SizedBox(height: 10),
-                          TextFieldWidget(
-                            controller: authController.resetPasswordController,
-                            obscureText:
-                                authController.isVisibility ? false : true,
-                            validator: (value) {
-                              if (value.toString().isEmpty) {
-                                return 'Enter your Password';
-                              } else if (authController.passwordController ==
-                                  authController.resetPasswordController) {
-                                return 'The password does not match please try again';
-                              } else {
-                                return null;
-                              }
-                            },
-                            suffixIcon: IconButton(
-                              onPressed: () {
-                                authController.visibility();
+                          
+                            TextFieldWidget(
+                              controller:
+                                  authController.resetPasswordController,
+                              obscureText:
+                                  authController.isVisibility ? false : true,
+                              validator: (value) {
+                                if (value.toString().isEmpty) {
+                                  return 'Enter your Password';
+                                } else if (authController.passwordController ==
+                                    authController.resetPasswordController) {
+                                  return 'The password does not match please try again';
+                                } else {
+                                  return null;
+                                }
                               },
-                              icon: authController.isVisibility
-                                  ? const Icon(
-                                      Icons.visibility_off,
-                                    )
-                                  : const Icon(
-                                      Icons.visibility,
-                                    ),
+                              suffixIcon: IconButton(
+                                onPressed: () {
+                                  authController.visibility();
+                                },
+                                icon: authController.isVisibility
+                                    ? const Icon(
+                                        Icons.visibility_off,
+                                      )
+                                    : const Icon(
+                                        Icons.visibility,
+                                      ),
+                              ),
+                              prefixIcon: const Icon(
+                                Icons.lock,
+                              ),
+                              label: 'Password',
                             ),
-                            prefixIcon: const Icon(
-                              Icons.lock,
+                            const SizedBox(height: 50),
+                            ElevatedButton(
+                              onPressed: () async {
+                                Get.offNamed(Routes.successfullyScreen);
+                              },
+                              child: const Text('Update Password'),
                             ),
-                            label: 'Password',
-                          ),
-                          const SizedBox(height: 10),
-                          ElevatedButton(
-                            onPressed: () async {
-                              Get.offNamed(Routes.successfullyScreen);
-                            },
-                            child: const Text('Update Password'),
-                          ),
-                        ],
-                      )))));
+                          ],
+                        ))
+                  ]))));
     });
   }
 }
