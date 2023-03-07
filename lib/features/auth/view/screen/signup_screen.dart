@@ -79,6 +79,7 @@ class SignUpScreen extends StatelessWidget {
                           controller: authController.passwordController,
                           obscureText:
                           authController.isVisibility ? false : true,
+
                           validator: (value) {
                             if (value.toString().isEmpty) {
                               return 'Enter your Password';
@@ -101,8 +102,8 @@ class SignUpScreen extends StatelessWidget {
                             )
                                 : const Icon(
                               Icons.visibility,
-                            ),
-                          ),
+
+                          )),
                           prefixIcon: const Icon(
                             Icons.lock,
                           ),
@@ -110,8 +111,8 @@ class SignUpScreen extends StatelessWidget {
                         ),
                         TextFieldWidget(
                           controller: authController.checkPasswordController,
-                          obscureText:
-                          authController.isVisibility ? false : true,
+                          obscureText: authController.isVisibility ? false : true,
+
                           validator: (value) {
                             if (value.toString().isEmpty) {
                               return 'Enter your Password';
@@ -134,8 +135,8 @@ class SignUpScreen extends StatelessWidget {
                             )
                                 : const Icon(
                               Icons.visibility,
-                            ),
-                          ),
+                            )),
+
                           prefixIcon: const Icon(
                             Icons.lock,
                           ),

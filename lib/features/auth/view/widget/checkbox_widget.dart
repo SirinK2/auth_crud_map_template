@@ -18,7 +18,7 @@ class CheckBoxWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
+    final theme = Theme.of(context).textTheme;
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
@@ -29,7 +29,7 @@ class CheckBoxWidget extends StatelessWidget {
         ),
         Text(
           title,
-          style: textTheme.headlineSmall,
+          style: theme.headlineSmall,
         ),
         TextButton(
           onPressed: () {
@@ -37,7 +37,7 @@ class CheckBoxWidget extends StatelessWidget {
           },
           child: Text(
             supTitle!,
-            style: textTheme.bodyMedium,
+            style: theme.bodyMedium,
           ),
         )
       ],

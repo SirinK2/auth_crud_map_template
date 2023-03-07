@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 
-class SocialButton extends StatelessWidget {
+class SignInWithButton extends StatelessWidget {
   final String text;
   final Function() onPressed;
   final String images;
 
-  const SocialButton(
+  const SignInWithButton(
       {required this.onPressed,
       required this.text,
       Key? key,

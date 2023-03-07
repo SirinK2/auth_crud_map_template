@@ -1,7 +1,8 @@
 import 'package:auth_crud_map_template/features/auth/view/screen/forgot_password_screen.dart';
 import 'package:auth_crud_map_template/features/auth/view/screen/login_screen.dart';
+import 'package:auth_crud_map_template/features/auth/view/screen/login_with_phone_screen.dart';
 import 'package:auth_crud_map_template/features/auth/view/screen/new_pasword_screen.dart';
-import 'package:auth_crud_map_template/features/auth/view/screen/otp_email_screen.dart';
+import 'package:auth_crud_map_template/features/auth/view/screen/otp_phone_screen.dart';
 import 'package:auth_crud_map_template/features/auth/view/screen/signup_screen.dart';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -14,6 +15,7 @@ import 'package:auth_crud_map_template/features/auth/view/screen/terms_and_condi
 >>>>>>> 11e2e2d (enh: add all the ui for auth feat)
 import 'package:auth_crud_map_template/home_screen.dart';
 import 'package:get/get.dart';
+import '../../features/profile/view/screen/profile_screen.dart';
 import '../../features/setting/view/screen/settings_screen.dart';
 import '../binding/binding.dart';
 
@@ -67,8 +69,8 @@ class AppRoutes {
         page: () => const TermsAndConditionsScreen(),
         binding: Binding()),
     GetPage(
-        name: Routes.otpEmailScreen,
-        page: () => OtpEmailScreen(),
+        name: Routes.otpPhoneScreen,
+        page: () => OtpPhoneScreen(),
         binding: Binding()),
     GetPage(
         name: Routes.newPasswordScreen,
@@ -78,7 +80,18 @@ class AppRoutes {
         name: Routes.successfullyScreen,
         page: () => const SuccessfullyScreen(),
         binding: Binding()),
+<<<<<<< HEAD
 >>>>>>> 11e2e2d (enh: add all the ui for auth feat)
+=======
+    GetPage(
+        name: Routes.profileScreen,
+        page: () => ProfileScreen(),
+        binding: Binding()),
+    GetPage(
+        name: Routes.logInWithPhoneScreen,
+        page: () => LogInWithPhoneScreen(),
+        binding: Binding()),
+>>>>>>> 8c30965 (enh: add all the ui for auth feat)
   ];
 }
 
@@ -100,8 +113,10 @@ class Routes {
 =======
   static const forgotPasswordScreen = '/forgot_password_screen';
   static const termsAndConditions = '/terms_and_conditions_screen';
-  static const otpEmailScreen = '/otp_email_screen';
+  static const otpPhoneScreen = '/otp_phone_screen';
   static const newPasswordScreen = '/new_password_screen';
   static const successfullyScreen = '/successfully_screen';
+  static const profileScreen = '/profile_screen';
+  static const logInWithPhoneScreen = '/login_with_phone_screen';
 }
 >>>>>>> 11e2e2d (enh: add all the ui for auth feat)
