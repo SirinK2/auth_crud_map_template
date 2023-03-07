@@ -1,16 +1,16 @@
 import 'package:auth_crud_map_template/core/constants/colors_app.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'text_theme.dart';
 
-ThemeData LightThemeData () {
+ThemeData LightThemeData() {
   return ThemeData(
-    fontFamily: 'Din',
+    fontFamily: GoogleFonts.ubuntu.toString(),
     primaryColor: whiteColor,
     cardColor: containerBackground,
     highlightColor: orangeColor,
-    splashColor: orangeColor,
+    splashColor: Colors.transparent,
     canvasColor: containerBackground,
-    colorSchemeSeed: containerBackground,
     dialogBackgroundColor: containerBackground,
     disabledColor: containerBackground,
     dividerColor: containerBackground,
@@ -24,22 +24,23 @@ ThemeData LightThemeData () {
     shadowColor: containerBackground,
     brightness: Brightness.light,
     scaffoldBackgroundColor: whiteColor,
+    //
     textTheme: CustomTextTheme.textThemeLight,
-
+    //
     drawerTheme: const DrawerThemeData(
       backgroundColor: whiteColor,
       scrimColor: greyColor,
     ),
-
+    //
     iconTheme: const IconThemeData(color: orangeColor),
-
+    //
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.transparent,
       iconTheme: IconThemeData(color: whiteColor, size: 30),
       elevation: 0.01,
       centerTitle: true,
     ),
-
+    //
     dialogTheme: const DialogTheme(
       backgroundColor: whiteColor,
       elevation: 0.0,
@@ -49,36 +50,35 @@ ThemeData LightThemeData () {
       contentTextStyle: TextStyle(),
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
-        bottomLeft: Radius.circular(40),
-        topRight: Radius.circular(40),
-      )),
+            bottomLeft: Radius.circular(40),
+            topRight: Radius.circular(40),
+          )),
     ),
-
+    //
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-            minimumSize: const Size(382, 41),
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-            foregroundColor: whiteColor,
-            elevation: 0.4,
-            backgroundColor: blackColor,
-            padding: const EdgeInsets.symmetric(vertical: 2))),
-
+          minimumSize: const Size(382, 41),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+          foregroundColor: whiteColor,
+          elevation: 0.4,
+          backgroundColor: blackColor,
+        )),
+    //
     outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
             shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
             foregroundColor: whiteColor,
             side: const BorderSide(color: greyColor),
             padding: const EdgeInsets.symmetric(vertical: 20))),
-
+    //
     tabBarTheme: const TabBarTheme(
         unselectedLabelColor: whiteColor,
         labelColor: orangeColor,
         labelStyle: TextStyle(color: orangeColor),
         indicator: UnderlineTabIndicator(
             borderSide: BorderSide(color: Colors.transparent))),
-
+    //
     inputDecorationTheme: InputDecorationTheme(
         contentPadding: const EdgeInsets.symmetric(vertical: 2.0),
         fillColor: whiteColor,
@@ -107,69 +107,45 @@ ThemeData LightThemeData () {
         ),
         filled: true,
         prefixStyle: const TextStyle(color: orangeColor)),
-
+    //
     tooltipTheme: TooltipThemeData(
       decoration: BoxDecoration(
         color: Colors.blue.withOpacity(0.9),
         borderRadius: BorderRadius.zero,
       ),
     ),
-
-    colorScheme: const ColorScheme.light(
-      primary: Colors.yellow, // header background color
-      onPrimary: Colors.black, // header text color
-      onSurface: Colors.green, // body text color
-    ),
-
-    textSelectionTheme: const TextSelectionThemeData(
-      cursorColor: Color.fromRGBO(66, 133, 244, 1.0),
-      selectionColor: Color(0xff64ffda),
-      selectionHandleColor: Color(0xff1de9b6),
-    ),
-
+    //
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
-        foregroundColor: Colors.white,
-        backgroundColor: Colors.teal,
+        foregroundColor: greyColor,
+        backgroundColor: whiteColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
         ),
-        minimumSize: const Size(400, 60),
       ),
     ),
-
+    //
     checkboxTheme: CheckboxThemeData(
-        checkColor: MaterialStateProperty.all(Colors.white),
-        fillColor: MaterialStateProperty.all(const Color(0xFFD8A21B))),
-
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(5),
+        ),
+        checkColor: MaterialStateProperty.all(whiteColor),
+        fillColor: MaterialStateProperty.all(orangeColor)),
+    //
     switchTheme: SwitchThemeData(
-      thumbColor: MaterialStateProperty.all(const Color(0xFFD8A21B)),
+      thumbColor: MaterialStateProperty.all(orangeColor),
       trackColor: MaterialStateProperty.all(const Color(0x66D8A21B)),
     ),
-
-    radioTheme: RadioThemeData(
-        fillColor: MaterialStateProperty.all(const Color(0xFFD8A21B))),
-
-    snackBarTheme: SnackBarThemeData(
-      backgroundColor: Colors.white,
-      actionTextColor: blackColor,
-      disabledActionTextColor: blackColor,
-      contentTextStyle: const TextStyle(color: blackColor),
-      elevation: 0.0,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-      behavior: SnackBarBehavior.fixed,
-      width: 90,
-      insetPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-      showCloseIcon: true,
-      closeIconColor: orangeColor,
-    ),
-
+    //
+    radioTheme:
+    RadioThemeData(fillColor: MaterialStateProperty.all(orangeColor)),
+    //
     sliderTheme: const SliderThemeData(
-        thumbColor: Colors.green,
+        thumbColor: orangeColor,
         thumbShape: RoundSliderThumbShape(enabledThumbRadius: 20)),
-
+    //
     popupMenuTheme: PopupMenuThemeData(
-      color: Colors.green,
+      color: orangeColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
       ),
@@ -181,6 +157,5 @@ ThemeData LightThemeData () {
       enableFeedback: true,
       // mouseCursor:,
     ),
-
   );
 }
