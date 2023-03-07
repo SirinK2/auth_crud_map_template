@@ -15,14 +15,11 @@ class SignUpScreen extends StatelessWidget {
 
   final authController = Get.put(AuthController());
   final formKey = GlobalKey<FormState>();
-
-
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
     return GetBuilder<AuthController>(builder: (_) {
       return Scaffold(
-
         body: SingleChildScrollView(
           child: Form(
               key: formKey,
@@ -82,8 +79,8 @@ class SignUpScreen extends StatelessWidget {
                         ),
                         TextFieldWidget(
                           controller: authController.passwordController,
-                          obscureText:
-                          authController.isVisibility ? false : true,
+                          obscureText: authController.isVisibility ? false : true,
+
 
                           validator: (value) {
                             if (value.toString().isEmpty) {
@@ -109,6 +106,7 @@ class SignUpScreen extends StatelessWidget {
                               Icons.visibility,
 
                           )),
+                                   
                           prefixIcon: const Icon(
                             Icons.lock,
                           ),
@@ -141,6 +139,7 @@ class SignUpScreen extends StatelessWidget {
                                 : const Icon(
                               Icons.visibility,
                             )),
+
 
                           prefixIcon: const Icon(
                             Icons.lock,
@@ -181,344 +180,6 @@ class SignUpScreen extends StatelessWidget {
               ])),
         ),
       );
-// =======
-//         body: Align(
-//           alignment: Alignment.center,
-//           child: SingleChildScrollView(
-//             child: SizedBox(
-//               width: 382,
-//                 child: Column(
-//                   mainAxisSize: MainAxisSize.min,
-//                   mainAxisAlignment: MainAxisAlignment.start,
-//                   children: <Widget>[
-//                     const SizedBox(height: 10),
-//                     Row(
-//                       children: [
-//                         const SizedBox(height: 10),
-//                         Align(
-//                           alignment: Alignment.centerLeft,
-//                           child: Text(
-//                             'Create Account',
-//                             style: theme.bodyLarge,
-//                           ),
-//                         ),
-//                       ],
-//                     ),
-//                     const SizedBox(height: 50),
-//                     TextFieldWidget(
-//                       controller: authController.emailController,
-//                       obscureText: false,
-//                       validator: (value) {
-//                         if (value.toString().isEmpty) {
-//                           return 'Enter your Emaile'.tr;
-//                         } else if (!RegExp(Validation.validationEmail)
-//                             .hasMatch(value)) {
-//                           return "Please enter a correct Email".tr;
-//                         } else {
-//                           return null;
-//                         }
-//                       },
-//                       prefixIcon: const Icon(Icons.email),
-//                       label: 'Email',
-//                     ),
-//                     const SizedBox(height: 10),
-//                     TextFieldWidget(
-//                       controller: authController.phoneController,
-//                       obscureText: false,
-//                       validator: (value) {
-//
-//                       },
-//                       prefixIcon: const Icon(Icons.person),
-//                       label: 'Name',
-//                     ),
-//                     const SizedBox(height: 10),
-//                     TextFieldWidget(
-//                       controller: authController.passwordController,
-//                       obscureText: authController.isVisibility ? false : true,
-//                       validator: (value) {
-//                         if (value.toString().isEmpty) {
-//                           return 'Enter your Password';
-//                         } else if (!RegExp(Validation.validationPassword)
-//                             .hasMatch(value)) {
-//                           return "Please enter a correct Password";
-//                         } else if (value.toString().length < 7) {
-//                           return 'Passwords should be at least 8 characters long ';
-//                         } else {
-//                           return null;
-//                         }
-//                       },
-//                       suffixIcon: IconButton(
-//                         onPressed: () {
-//                           authController.visibility();
-//                         },
-//                         icon: authController.isVisibility
-//                             ? const Icon(
-//                           Icons.visibility_off,
-//                         )
-//                             : const Icon(
-//                           Icons.visibility,
-//                         ),
-//                       ),
-//                       prefixIcon: const Icon(
-//                         Icons.lock,
-//                       ),
-//                       label: 'Password',
-//                     ),
-//                     const SizedBox(height: 10),
-//                     TextFieldWidget(
-//                       controller: authController.checkPasswordController,
-//                       obscureText: authController.isVisibility ? false : true,
-//                       validator: (value) {
-//                         if (value.toString().isEmpty) {
-//                           return 'Enter your Password';
-//                         } else if (!RegExp(Validation.validationPassword)
-//                             .hasMatch(value)) {
-//                           return "Please enter a correct Password";
-//                         } else if (value.toString().length < 7) {
-//                           return 'Passwords should be at least 8 characters long ';
-//                         } else {
-//                           return null;
-//                         }
-//                       },
-//                       suffixIcon: IconButton(
-//                         onPressed: () {
-//                           authController.visibility();
-//                         },
-//                         icon: authController.isVisibility
-//                             ? const Icon(
-//                           Icons.visibility_off,
-//                         )
-//                             : const Icon(
-//                           Icons.visibility,
-//                         ),
-//                       ),
-//                       prefixIcon: const Icon(
-//                         Icons.lock,
-//                       ),
-//                       label: 'Password',
-//                     ),
-//                     const SizedBox(height: 10),
-//                     CheckBoxWidget(
-//                       value: authController.isChecked,
-//                       onChanged: (bool? value) {
-//                         authController.checkBox(value!);
-//                       },
-//                       title: 'Remember me',
-//                       supTitle: '',
-//                     ),
-//                     const SizedBox(height: 10),
-//                     ElevatedButton(
-//                       onPressed: () async {
-//
-//                       },
-//                       child: const Text('Signup'),
-//                     ),
-//                     const SizedBox(height: 10),
-//                     SocialButton(
-//                       onPressed: () {},
-//                       text: 'Sign Up with Google',
-//                       images: AppImages.googleLogo,
-//                     ),
-//                     const SizedBox(height: 10),
-//                     SocialButton(
-//                       onPressed: () {},
-//                       text: 'Sign Up with Apple',
-//                       images: AppImages.appleLogo,
-//                     ),
-//                     const SizedBox(height: 10),
-//                     Row(
-//                       mainAxisAlignment: MainAxisAlignment.start,
-//                       children: [
-//                         Text(
-//                           "Already have an account? ",
-//                           style: theme.bodySmall,
-//                         ),
-//                         TextButton(
-//                           onPressed: () {
-//                           Get.offNamed(Routes.loginScreen);
-//                           },
-//                           child: Text(
-//                             'Log In',
-//                             style: theme.labelSmall,
-//                           ),
-//                         ),
-//                       ],
-//                     ),
-//                   ],
-//                 )),
-//           )
-//           ),
-//         );
-// >>>>>>> 7dde245 (fix: conflict)
-// =======
-//         body: Align(
-//             alignment: Alignment.center,
-//             child: SingleChildScrollView(
-//               child: SizedBox(
-//                   width: 382,
-//                   child: Column(
-//                     mainAxisSize: MainAxisSize.min,
-//                     mainAxisAlignment: MainAxisAlignment.start,
-//                     children: <Widget>[
-//                       const SizedBox(height: 10),
-//                       Row(
-//                         children: [
-//                           const SizedBox(height: 10),
-//                           Align(
-//                             alignment: Alignment.centerLeft,
-//                             child: Text(
-//                               'Create Account',
-//                               style: theme.bodyLarge,
-//                             ),
-//                           ),
-//                         ],
-//                       ),
-//                       const SizedBox(height: 50),
-//                       TextFieldWidget(
-//                         controller: authController.emailController,
-//                         obscureText: false,
-//                         validator: (value) {
-//                           if (value.toString().isEmpty) {
-//                             return 'Enter your Emaile'.tr;
-//                           } else if (!RegExp(Validation.validationEmail)
-//                               .hasMatch(value)) {
-//                             return "Please enter a correct Email".tr;
-//                           } else {
-//                             return null;
-//                           }
-//                         },
-//                         prefixIcon: const Icon(Icons.email),
-//                         label: 'Email',
-//                       ),
-//                       const SizedBox(height: 10),
-//                       TextFieldWidget(
-//                         controller: authController.firstNameController,
-//                         obscureText: false,
-//                         validator: (value) {},
-//                         prefixIcon: const Icon(Icons.person),
-//                         label: 'Name',
-//                       ),
-//                       const SizedBox(height: 10),
-//                       TextFieldWidget(
-//                         controller: authController.passwordController,
-//                         obscureText: authController.isVisibility ? false : true,
-//                         validator: (value) {
-//                           if (value.toString().isEmpty) {
-//                             return 'Enter your Password';
-//                           } else if (!RegExp(Validation.validationPassword)
-//                               .hasMatch(value)) {
-//                             return "Please enter a correct Password";
-//                           } else if (value.toString().length < 7) {
-//                             return 'Passwords should be at least 8 characters long ';
-//                           } else {
-//                             return null;
-//                           }
-//                         },
-//                         suffixIcon: IconButton(
-//                           onPressed: () {
-//                             authController.visibility();
-//                           },
-//                           icon: authController.isVisibility
-//                               ? const Icon(
-//                                   Icons.visibility_off,
-//                                 )
-//                               : const Icon(
-//                                   Icons.visibility,
-//                                 ),
-//                         ),
-//                         prefixIcon: const Icon(
-//                           Icons.lock,
-//                         ),
-//                         label: 'Password',
-//                       ),
-//                       const SizedBox(height: 10),
-//                       TextFieldWidget(
-//                         controller: authController.checkPasswordController,
-//                         obscureText: authController.isVisibility ? false : true,
-//                         validator: (value) {
-//                           if (value.toString().isEmpty) {
-//                             return 'Enter your Password';
-//                           } else if (!RegExp(Validation.validationPassword)
-//                               .hasMatch(value)) {
-//                             return "Please enter a correct Password";
-//                           } else if (value.toString().length < 7) {
-//                             return 'Passwords should be at least 8 characters long ';
-//                           } else {
-//                             return null;
-//                           }
-//                         },
-//                         suffixIcon: IconButton(
-//                           onPressed: () {
-//                             authController.visibility();
-//                           },
-//                           icon: authController.isVisibility
-//                               ? const Icon(
-//                                   Icons.visibility_off,
-//                                 )
-//                               : const Icon(
-//                                   Icons.visibility,
-//                                 ),
-//                         ),
-//                         prefixIcon: const Icon(
-//                           Icons.lock,
-//                         ),
-//                         label: 'Password',
-//                       ),
-//                       const SizedBox(height: 10),
-//                       CheckBoxWidget(
-//                         value: authController.isChecked,
-//                         onChanged: (bool? value) {
-//                           authController.checkBox(value!);
-//                         },
-//                         title: 'Remember me',
-//                         supTitle: '',
-//                       ),
-//                       const SizedBox(height: 10),
-//                       ElevatedButton(
-//                         onPressed: () async {
-//                           await authController.signUpWithEmail(
-//                               authController.emailController.text,
-//                               authController.passwordController.text,
-//                               authController.firstNameController.text);
-//                         },
-//                         child: const Text('Signup'),
-//                       ),
-//                       const SizedBox(height: 10),
-//                       SocialButton(
-//                         onPressed: () {},
-//                         text: 'Sign Up with Google',
-//                         images: AppImages.googleLogo,
-//                       ),
-//                       const SizedBox(height: 10),
-//                       SocialButton(
-//                         onPressed: () {},
-//                         text: 'Sign Up with Apple',
-//                         images: AppImages.appleLogo,
-//                       ),
-//                       const SizedBox(height: 10),
-//                       Row(
-//                         mainAxisAlignment: MainAxisAlignment.start,
-//                         children: [
-//                           Text(
-//                             "Already have an account? ",
-//                             style: theme.bodySmall,
-//                           ),
-//                           TextButton(
-//                             onPressed: () {
-//                               Get.offNamed(Routes.loginScreen);
-//                             },
-//                             child: Text(
-//                               'Log In',
-//                               style: theme.labelSmall,
-//                             ),
-//                           ),
-//                         ],
-//                       ),
-//                     ],
-//                   )),
-//             )),
-//       );
-// >>>>>>> 58fcc5e (feat: google login)
-    });
+  });
   }
 }

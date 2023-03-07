@@ -40,7 +40,6 @@ class CheckBoxWidget extends StatelessWidget {
           child: Text(
             supTitle!,
             style: theme.bodyMedium,
-
           ),
         )
       ],

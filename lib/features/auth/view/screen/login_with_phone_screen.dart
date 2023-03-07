@@ -35,6 +35,7 @@ class LogInWithPhoneScreen extends StatelessWidget {
                       onPressed: () {
                         authController.signInWithPhone('+966538413757');
                         // Get.offNamed(Routes.otpPhoneScreen);
+
                       },
                       text: 'Enter your Phone Number ',
                       label: 'Phone Number',
