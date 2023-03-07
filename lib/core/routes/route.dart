@@ -1,6 +1,11 @@
 import 'package:auth_crud_map_template/features/auth/view/screen/forgot_password_screen.dart';
 import 'package:auth_crud_map_template/features/auth/view/screen/login_screen.dart';
 import 'package:auth_crud_map_template/features/auth/view/screen/login_with_phone_screen.dart';
+import 'package:auth_crud_map_template/features/auth/view/screen/otp_phone_screen.dart';
+import 'package:auth_crud_map_template/features/auth/view/screen/signup_screen.dart';
+import 'package:auth_crud_map_template/features/profile/profile.dart';
+import 'package:auth_crud_map_template/features/auth/view/screen/successfully_screen.dart';
+import 'package:auth_crud_map_template/features/auth/view/screen/terms_and_conditions_screen.dart';
 import 'package:auth_crud_map_template/features/auth/view/screen/new_pasword_screen.dart';
 import 'package:auth_crud_map_template/features/auth/view/screen/otp_phone_screen.dart';
 import 'package:auth_crud_map_template/features/auth/view/screen/signup_screen.dart';
@@ -19,17 +24,24 @@ class AppRoutes {
       page: () => const HomeScreen(),
     ),
     GetPage(
-        name: Routes.translation,
-        page: () => const SettingScreen(),
-        binding: Binding()),
+        name: Routes.settingScreen,
+        page: ()=> const SettingScreen(),
+      binding: Binding()
+    ),
     GetPage(
         name: Routes.loginScreen,
         page: () => LoginScreen(),
         binding: Binding()),
     GetPage(
         name: Routes.signScreen,
-        page: () => SignUpScreen(),
-        binding: Binding()),
+        page: ()=>  SignUpScreen(),
+        binding: Binding()
+    ),
+    GetPage(
+        name: Routes.profileScreen,
+        page: ()=>  const ProfileScreen(),
+        binding: Binding()
+    ),
     GetPage(
         name: Routes.forgotPasswordScreen,
         page: () => ForgotPasswordScreen(),
@@ -42,6 +54,7 @@ class AppRoutes {
         name: Routes.otpPhoneScreen,
         page: () => OtpPhoneScreen(),
         binding: Binding()),
+
     GetPage(
         name: Routes.newPasswordScreen,
         page: () => NewPasswordScreen(),
@@ -50,6 +63,7 @@ class AppRoutes {
         name: Routes.successfullyScreen,
         page: () => const SuccessfullyScreen(),
         binding: Binding()),
+
     GetPage(
         name: Routes.profileScreen,
         page: () => ProfileScreen(),
@@ -63,7 +77,7 @@ class AppRoutes {
 
 class Routes {
   static const homeScreen = '/home_screen';
-  static const translation = '/translation';
+  static const settingScreen = '/setting_screen';
   static const loginScreen = '/login_screen';
   static const signScreen = '/signup_screen';
   static const forgotPasswordScreen = '/forgot_password_screen';

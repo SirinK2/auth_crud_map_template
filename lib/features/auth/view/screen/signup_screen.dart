@@ -3,14 +3,16 @@ import 'package:auth_crud_map_template/common/text_field_widget.dart';
 import 'package:auth_crud_map_template/core/constants/app_image.dart';
 import 'package:auth_crud_map_template/core/constants/validation.dart';
 import 'package:auth_crud_map_template/core/routes/route.dart';
-import 'package:auth_crud_map_template/features/auth/controller/auth_controller.dart';
 import 'package:auth_crud_map_template/features/auth/view/widget/checkbox_widget.dart';
-import 'package:auth_crud_map_template/features/auth/view/widget/social_button_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
+
+import '../../logic/controller/auth_controller.dart';
 
 class SignUpScreen extends StatelessWidget {
   SignUpScreen({super.key});
+
   final authController = Get.put(AuthController());
   final formKey = GlobalKey<FormState>();
   @override
@@ -77,8 +79,9 @@ class SignUpScreen extends StatelessWidget {
                         ),
                         TextFieldWidget(
                           controller: authController.passwordController,
-                          obscureText:
-                              authController.isVisibility ? false : true,
+                          obscureText: authController.isVisibility ? false : true,
+
+
                           validator: (value) {
                             if (value.toString().isEmpty) {
                               return 'Enter your Password';
@@ -97,12 +100,13 @@ class SignUpScreen extends StatelessWidget {
                             },
                             icon: authController.isVisibility
                                 ? const Icon(
-                                    Icons.visibility_off,
-                                  )
+                              Icons.visibility_off,
+                            )
                                 : const Icon(
-                                    Icons.visibility,
-                                  ),
-                          ),
+                              Icons.visibility,
+
+                          )),
+                                   
                           prefixIcon: const Icon(
                             Icons.lock,
                           ),
@@ -110,8 +114,8 @@ class SignUpScreen extends StatelessWidget {
                         ),
                         TextFieldWidget(
                           controller: authController.checkPasswordController,
-                          obscureText:
-                              authController.isVisibility ? false : true,
+                          obscureText: authController.isVisibility ? false : true,
+
                           validator: (value) {
                             if (value.toString().isEmpty) {
                               return 'Enter your Password';
@@ -130,12 +134,13 @@ class SignUpScreen extends StatelessWidget {
                             },
                             icon: authController.isVisibility
                                 ? const Icon(
-                                    Icons.visibility_off,
-                                  )
+                              Icons.visibility_off,
+                            )
                                 : const Icon(
-                                    Icons.visibility,
-                                  ),
-                          ),
+                              Icons.visibility,
+                            )),
+
+
                           prefixIcon: const Icon(
                             Icons.lock,
                           ),
@@ -175,6 +180,6 @@ class SignUpScreen extends StatelessWidget {
               ])),
         ),
       );
-    });
+  });
   }
 }

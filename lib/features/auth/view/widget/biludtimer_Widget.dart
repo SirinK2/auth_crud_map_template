@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:timer_count_down/timer_count_down.dart';
-import '../../controller/auth_controller.dart';
+import '../../logic/controller/auth_controller.dart';
+
 
 class BuildTimerWidget extends StatelessWidget {
   const BuildTimerWidget({

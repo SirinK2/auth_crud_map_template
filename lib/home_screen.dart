@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:auth_crud_map_template/core/routes/route.dart';
@@ -7,6 +8,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context).textTheme;
+
     return Scaffold(
         body: Align(
             alignment: Alignment.center,
@@ -15,11 +18,13 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
+
                   ElevatedButton(
                       onPressed: () {
                         Get.offNamed(Routes.loginScreen);
                       },
                       child: const Text(
+
                         'Authentication',
                       )),
                   const SizedBox(height: 10),
@@ -28,18 +33,21 @@ class HomeScreen extends StatelessWidget {
                         Get.offNamed(Routes.profileScreen);
                       },
                       child: const Text(
+
                         'Profile',
                       )),
                   const SizedBox(height: 10),
                   ElevatedButton(
                       onPressed: () {},
                       child: const Text(
+
                         'Crud',
                       )),
                   const SizedBox(height: 10),
                   ElevatedButton(
                       onPressed: () {},
                       child: const Text(
+
                         'Current location',
                       )),
                 ],

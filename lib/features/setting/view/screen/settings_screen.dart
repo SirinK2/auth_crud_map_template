@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../controllers/localization_controller.dart';
-
+import 'package:platform/platform.dart' show Platform;
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen({super.key});

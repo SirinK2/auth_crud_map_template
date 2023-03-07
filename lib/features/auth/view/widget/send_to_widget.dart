@@ -1,5 +1,6 @@
 import 'package:auth_crud_map_template/common/text_field_widget.dart';
-import 'package:auth_crud_map_template/features/auth/controller/auth_controller.dart';
+import '../../logic/controller/auth_controller.dart';
+
 import 'package:flutter/material.dart';
 
 class SendToWidget extends StatelessWidget {
