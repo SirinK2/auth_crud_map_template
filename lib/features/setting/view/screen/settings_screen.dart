@@ -40,7 +40,7 @@ class SettingScreen extends StatelessWidget {
     });
   }
 }
-
+//
 // final controller = Get.find<LocalizationController>();
 // String dropdownValue = controller.initialLanguage.toString();
 //
