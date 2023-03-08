@@ -1,10 +1,11 @@
 import 'package:auth_crud_map_template/core/constants/colors_app.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class TextFieldOtpWidget extends StatelessWidget {
   const TextFieldOtpWidget(
       {Key? key,
-       this.focusNode,
+      this.focusNode,
       required this.controller,
       required this.onChanged})
       : super(key: key);
@@ -40,7 +41,9 @@ class TextFieldOtpWidget extends StatelessWidget {
   OutlineInputBorder outlineInputBorder() {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(4),
-      borderSide: const BorderSide(color: blackColor),
+      borderSide: BorderSide(
+        color: Get.isDarkMode ? whiteColor : blackColor,
+      ),
     );
   }
 }

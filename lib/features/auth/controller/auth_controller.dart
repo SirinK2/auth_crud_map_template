@@ -51,14 +51,14 @@ class AuthController extends GetxController
 
 //fun for Password icon
   void visibility() {
-    isVisibility = !isVisibility;
+    isVisibility = isVisibility;
     update();
   }
 
 
 //fun for CheckBox
-  void checkBox(bool val) {
-    isChecked = val;
+  void checkBox() {
+    isChecked = isChecked;
     update();
   }
 }

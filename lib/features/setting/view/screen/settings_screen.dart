@@ -1,5 +1,6 @@
 import 'package:auth_crud_map_template/common/header_widget.dart';
 import 'package:auth_crud_map_template/core/routes/route.dart';
+import 'package:auth_crud_map_template/features/setting/widget/switch_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../controllers/setting_controller.dart';
@@ -7,7 +8,7 @@ import '../../controllers/setting_controller.dart';
 class SettingScreen extends StatelessWidget {
   SettingScreen({super.key});
 
-  final controller = Get.find<SettingController>();
+  final settingController = Get.find<SettingController>();
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +30,9 @@ class SettingScreen extends StatelessWidget {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: const <Widget>[]))
+                      children:  <Widget>[
+                         SwitchWidget(settingController: settingController,)
+                      ]))
             ],
           ),
         ),
@@ -37,7 +40,7 @@ class SettingScreen extends StatelessWidget {
     });
   }
 }
-
+//
 // final controller = Get.find<LocalizationController>();
 // String dropdownValue = controller.initialLanguage.toString();
 //

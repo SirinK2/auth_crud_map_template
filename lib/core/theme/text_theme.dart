@@ -22,19 +22,19 @@ class CustomTextTheme {
 
     return TextTheme(
       headlineLarge: GoogleFonts.ubuntu(
-        color: blackColor,
+        color: textColor,
         fontSize: 24,
         fontWeight: bold,
         letterSpacing: 0.0,
       ),
       headlineMedium: GoogleFonts.ubuntu(
-        color: blackColor,
+        color: textColor,
         fontSize: 20,
         fontWeight: medium,
         letterSpacing: 0.0,
       ),
       headlineSmall: GoogleFonts.ubuntu(
-        color: blackColor,
+        color: textColor,
         fontSize: 12,
         fontWeight: regular,
         letterSpacing: 0.0,
@@ -91,24 +91,6 @@ class CustomTextTheme {
       labelSmall: GoogleFonts.ubuntu(
         color: greyColor,
         fontSize: 12,
-        fontWeight: regular,
-        letterSpacing: 0.0,
-      ),
-      titleLarge: GoogleFonts.ubuntu(
-        color: textColor,
-        fontSize: 24,
-        fontWeight: bold,
-        letterSpacing: 0.0,
-      ),
-      titleMedium: GoogleFonts.ubuntu(
-        color: textColor,
-        fontSize: 20,
-        fontWeight: medium,
-        letterSpacing: 0.0,
-      ),
-      titleSmall: GoogleFonts.ubuntu(
-        color: textColor,
-        fontSize: 16,
         fontWeight: regular,
         letterSpacing: 0.0,
       ),
