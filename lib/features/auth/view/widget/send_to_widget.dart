@@ -1,5 +1,6 @@
 import 'package:auth_crud_map_template/common/text_field_widget.dart';
-import 'package:auth_crud_map_template/features/auth/controller/auth_controller.dart';
+import '../../logic/controller/auth_controller.dart';
+
 import 'package:flutter/material.dart';
 
 class SendToWidget extends StatelessWidget {
@@ -21,7 +22,7 @@ class SendToWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       width: 390,
       height: 400,
       child: Column(

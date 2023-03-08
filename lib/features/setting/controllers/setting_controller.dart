@@ -5,7 +5,7 @@ import 'package:get_storage/get_storage.dart';
 
 import '../../../core/constants/keys.dart';
 
-class LocalizationController extends GetxController {
+class SettingController extends GetxController {
   GetStorage localeStorage = GetStorage();
 
   Locale? initialLanguage = GetStorage().read(AppKeys.langKey) == null

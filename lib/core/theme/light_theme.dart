@@ -4,11 +4,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'text_theme.dart';
 
 ThemeData lightThemeData() {
+
   return ThemeData(
     fontFamily: GoogleFonts.ubuntu.toString(),
     primaryColor: whiteColor,
     cardColor: containerBackground,
-    highlightColor: orangeColor,
+    highlightColor: greyColor,
     splashColor: Colors.transparent,
     canvasColor: containerBackground,
     dialogBackgroundColor: containerBackground,

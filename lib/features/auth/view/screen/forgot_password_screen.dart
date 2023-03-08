@@ -5,7 +5,8 @@ import 'package:auth_crud_map_template/features/auth/view/widget/send_to_widget.
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import '../../controller/auth_controller.dart';
+import '../../logic/controller/auth_controller.dart';
+
 
 class ForgotPasswordScreen extends StatelessWidget {
   ForgotPasswordScreen({

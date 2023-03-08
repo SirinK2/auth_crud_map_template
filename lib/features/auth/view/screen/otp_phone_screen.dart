@@ -1,6 +1,6 @@
 import 'package:auth_crud_map_template/common/header_widget.dart';
 import 'package:auth_crud_map_template/core/routes/route.dart';
-import 'package:auth_crud_map_template/features/auth/controller/auth_controller.dart';
+import '../../logic/controller/auth_controller.dart';
 import 'package:auth_crud_map_template/features/auth/view/widget/biludtimer_Widget.dart';
 import 'package:auth_crud_map_template/features/auth/view/widget/form_otb_widget.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +29,7 @@ class OtpPhoneScreen extends StatelessWidget {
                       },
                     ),
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
                       width: 390,
                       height: 400,
                       child: Column(
