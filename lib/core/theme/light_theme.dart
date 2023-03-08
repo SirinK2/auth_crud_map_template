@@ -19,7 +19,6 @@ ThemeData lightThemeData() {
     hintColor: containerBackground,
     hoverColor: containerBackground,
     indicatorColor: containerBackground,
-    primaryColorDark: containerBackground,
     primaryColorLight: containerBackground,
     secondaryHeaderColor: containerBackground,
     shadowColor: containerBackground,
@@ -136,7 +135,7 @@ ThemeData lightThemeData() {
     //
     switchTheme: SwitchThemeData(
       thumbColor: MaterialStateProperty.all(orangeColor),
-      trackColor: MaterialStateProperty.all(const Color(0x66D8A21B)),
+      trackColor: MaterialStateProperty.all(blackColor),
     ),
     //
     radioTheme:

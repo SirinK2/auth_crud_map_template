@@ -19,10 +19,6 @@ class AppRoutes {
       page: () => const HomeScreen(),
     ),
     GetPage(
-        name: Routes.settingScreen,
-        page: () => SettingScreen(),
-        binding: Binding()),
-    GetPage(
         name: Routes.loginScreen,
         page: () => LoginScreen(),
         binding: Binding()),
