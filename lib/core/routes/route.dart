@@ -3,14 +3,9 @@ import 'package:auth_crud_map_template/features/auth/view/screen/login_screen.da
 import 'package:auth_crud_map_template/features/auth/view/screen/login_with_phone_screen.dart';
 import 'package:auth_crud_map_template/features/auth/view/screen/otp_phone_screen.dart';
 import 'package:auth_crud_map_template/features/auth/view/screen/signup_screen.dart';
-import 'package:auth_crud_map_template/features/profile/profile.dart';
 import 'package:auth_crud_map_template/features/auth/view/screen/successfully_screen.dart';
 import 'package:auth_crud_map_template/features/auth/view/screen/terms_and_conditions_screen.dart';
 import 'package:auth_crud_map_template/features/auth/view/screen/new_pasword_screen.dart';
-import 'package:auth_crud_map_template/features/auth/view/screen/otp_phone_screen.dart';
-import 'package:auth_crud_map_template/features/auth/view/screen/signup_screen.dart';
-import 'package:auth_crud_map_template/features/auth/view/screen/successfully_screen.dart';
-import 'package:auth_crud_map_template/features/auth/view/screen/terms_and_conditions_screen.dart';
 import 'package:auth_crud_map_template/home_screen.dart';
 import 'package:get/get.dart';
 import '../../features/profile/view/screen/profile_screen.dart';
@@ -39,7 +34,7 @@ class AppRoutes {
     ),
     GetPage(
         name: Routes.profileScreen,
-        page: ()=>  const ProfileScreen(),
+        page: ()=>   ProfileScreen(),
         binding: Binding()
     ),
     GetPage(
@@ -62,11 +57,6 @@ class AppRoutes {
     GetPage(
         name: Routes.successfullyScreen,
         page: () => const SuccessfullyScreen(),
-        binding: Binding()),
-
-    GetPage(
-        name: Routes.profileScreen,
-        page: () => ProfileScreen(),
         binding: Binding()),
     GetPage(
         name: Routes.logInWithPhoneScreen,
