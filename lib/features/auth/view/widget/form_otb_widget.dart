@@ -9,7 +9,7 @@ class FormOtbWidget extends StatelessWidget {
   final AuthController authController;
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 50,
       width: 500,
       child: Row(

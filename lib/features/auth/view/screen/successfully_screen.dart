@@ -18,7 +18,7 @@ class SuccessfullyScreen extends StatelessWidget {
         },
       ),
       Container(
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         width: 390,
         height: 300,
         child: Column(

@@ -22,7 +22,7 @@ class SendToWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       width: 390,
       height: 400,
       child: Column(

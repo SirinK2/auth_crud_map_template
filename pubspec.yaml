@@ -38,14 +38,11 @@ dependencies:
   get_storage: ^2.0.3
   get: ^4.6.5
   google_fonts: ^3.0.1
-
   firebase_core: ^2.7.0
   firebase_auth: ^4.2.9
   google_sign_in: ^6.0.2
   timer_count_down: ^2.2.2
-  firebase_core: ^2.7.0
-  firebase_auth: ^4.2.9
-  google_sign_in: ^6.0.2
+
 
 
 

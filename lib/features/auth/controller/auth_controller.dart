@@ -45,7 +45,7 @@ class AuthController extends GetxController
   TextEditingController aboutYourselfController = TextEditingController();
   TextEditingController cityController = TextEditingController();
   TextEditingController birthController = TextEditingController();
-  TextEditingController resetPasswordController = TextEditingController();
+
 
 
 

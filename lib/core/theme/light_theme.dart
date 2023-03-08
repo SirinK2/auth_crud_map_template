@@ -9,7 +9,7 @@ ThemeData lightThemeData() {
     fontFamily: GoogleFonts.ubuntu.toString(),
     primaryColor: whiteColor,
     cardColor: containerBackground,
-    highlightColor: orangeColor,
+    highlightColor: greyColor,
     splashColor: Colors.transparent,
     canvasColor: containerBackground,
     dialogBackgroundColor: containerBackground,

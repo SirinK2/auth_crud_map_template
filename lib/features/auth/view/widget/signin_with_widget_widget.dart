@@ -2,20 +2,17 @@ import 'package:auth_crud_map_template/core/constants/colors_app.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-
-class SignInWithButton extends StatelessWidget {
-
-  final String text;
-  final Function() onPressed;
-  final String images;
-
-  const SignInWithButton(
-
+class SignInWithWidget extends StatelessWidget {
+  const SignInWithWidget(
       {required this.onPressed,
       required this.text,
       Key? key,
       required this.images})
       : super(key: key);
+
+  final String text;
+  final Function() onPressed;
+  final String images;
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +23,8 @@ class SignInWithButton extends StatelessWidget {
           onPressed: onPressed,
           style: ElevatedButton.styleFrom(
               minimumSize: const Size(382, 41),
-              shape:
-                  RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5)),
               foregroundColor: whiteColor,
               elevation: 0.4,
               backgroundColor: whiteColor,
@@ -36,10 +33,7 @@ class SignInWithButton extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(
-                  height: 15,
-                  width:15 ,
-                  child: Image.asset(images)),
+              SizedBox(height: 15, width: 15, child: Image.asset(images)),
               SizedBox(width: Get.height * 0.01),
               Text(text, style: Theme.of(context).textTheme.bodySmall),
             ],

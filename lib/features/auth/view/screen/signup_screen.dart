@@ -1,6 +1,5 @@
 import 'package:auth_crud_map_template/common/header_widget.dart';
 import 'package:auth_crud_map_template/common/text_field_widget.dart';
-import 'package:auth_crud_map_template/core/constants/app_image.dart';
 import 'package:auth_crud_map_template/core/constants/validation.dart';
 import 'package:auth_crud_map_template/core/routes/route.dart';
 import 'package:auth_crud_map_template/features/auth/view/widget/checkbox_widget.dart';
@@ -30,7 +29,7 @@ class SignUpScreen extends StatelessWidget {
                   },
                 ),
                 Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     width: 390,
                     height: 550,
                     child: Column(
@@ -144,7 +143,7 @@ class SignUpScreen extends StatelessWidget {
                           prefixIcon: const Icon(
                             Icons.lock,
                           ),
-                          label: 'Password',
+                          label: 'Confirm Password',
                         ),
                         CheckBoxWidget(
                           value: authController.isChecked,

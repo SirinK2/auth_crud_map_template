@@ -3,19 +3,14 @@ import 'package:auth_crud_map_template/common/text_field_widget.dart';
 import 'package:auth_crud_map_template/core/constants/app_image.dart';
 import 'package:auth_crud_map_template/core/constants/validation.dart';
 import 'package:auth_crud_map_template/core/routes/route.dart';
-
 import 'package:auth_crud_map_template/features/auth/view/widget/checkbox_widget.dart';
-import 'package:auth_crud_map_template/features/auth/view/widget/social_button_widget.dart';
+import 'package:auth_crud_map_template/features/auth/view/widget/signin_with_widget_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../logic/controller/auth_controller.dart';
 
-class LoginScreen extends StatelessWidget {
-  LoginScreen({super.key});
 
-  final formKey = GlobalKey<FormState>();
-  final authController = Get.find<AuthController>();
+
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
@@ -37,7 +32,7 @@ class LoginScreen extends StatelessWidget {
                 },
               ),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 width: 390,
                 height: 600,
                 child: Column(
@@ -62,9 +57,9 @@ class LoginScreen extends StatelessWidget {
                           }
                         },
                         prefixIcon: const Icon(
-                          Icons.login,
+                          Icons.email_outlined,
                         ),
-                        label: 'Email or Phone',
+                        label: 'Email',
                       ),
                       TextFieldWidget(
                         controller: authController.passwordController,
@@ -111,7 +106,7 @@ class LoginScreen extends StatelessWidget {
                           await authController.signInWithEmail(
                               authController.emailController.text,
                               authController.passwordController.text);
-
+                        },
                         child: const Text('logIn'),
                       ),
                       TextButton(
@@ -121,22 +116,21 @@ class LoginScreen extends StatelessWidget {
                         child: Text('Forgot password ?',
                             style: theme.headlineSmall),
                       ),
-                      SignInWithButton(
+                      SignInWithWidget(
                         onPressed: () {
                           Get.offNamed(Routes.logInWithPhoneScreen);
                         },
                         text: 'Sign In with Phone',
                         images: AppImages.phoneLogo,
                       ),
-                      SignInWithButton(
+                      SignInWithWidget(
                         onPressed: () async {
                           await authController.signInWithGoogle();
                         },
-
                         text: 'Sign In with Google',
                         images: AppImages.googleLogo,
                       ),
-                      SignInWithButton(
+                      SignInWithWidget(
                         onPressed: () {},
                         text: 'Sign In with Apple',
                         images: AppImages.appleLogo,
