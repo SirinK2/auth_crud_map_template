@@ -3,11 +3,11 @@ import 'package:get/get.dart';
 import '../../features/setting/controllers/setting_controller.dart';
 import '../../features/auth/logic/controller/auth_controller.dart';
 
-class Binding implements Bindings{
+class Binding implements Bindings {
   @override
   void dependencies() {
-   Get.put(SettingController());
-  Get.put(AuthController());
-  Get.put(ProfileController());
+    Get.put(SettingController());
+    Get.put(AuthController());
+    Get.put(ProfileController());
   }
 }

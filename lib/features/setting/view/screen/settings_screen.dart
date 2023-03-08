@@ -3,7 +3,6 @@ import 'package:auth_crud_map_template/core/routes/route.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../controllers/setting_controller.dart';
-import 'package:platform/platform.dart' show Platform;
 
 class SettingScreen extends StatelessWidget {
   SettingScreen({super.key});
@@ -14,29 +13,30 @@ class SettingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<SettingController>(builder: (_) {
       return Scaffold(
-          body: SingleChildScrollView(
-              child: Column(children: [
-                     HeaderWidget(
-                   title: 'Setting',
-                     onPressed: () {
-                     Get.offNamed(Routes.homeScreen);
-                        },
-                     ),
-                      Container(
-                         padding: const EdgeInsets.symmetric(horizontal: 20),
-                         width: 390,
-                         height: 300,
-                           child: Column(
-                                 crossAxisAlignment: CrossAxisAlignment.start,
-                                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                 children: const <Widget>[
-                ]))
-      ])));
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              HeaderWidget(
+                title: 'Setting',
+                onPressed: () {
+                  Get.offNamed(Routes.homeScreen);
+                },
+              ),
+              Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  width: 390,
+                  height: 300,
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: const <Widget>[]))
+            ],
+          ),
+        ),
+      );
     });
   }
 }
-
-
 
 // final controller = Get.find<LocalizationController>();
 // String dropdownValue = controller.initialLanguage.toString();

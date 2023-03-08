@@ -20,23 +20,20 @@ class AppRoutes {
     ),
     GetPage(
         name: Routes.settingScreen,
-        page: ()=>  SettingScreen(),
-      binding: Binding()
-    ),
+        page: () => SettingScreen(),
+        binding: Binding()),
     GetPage(
         name: Routes.loginScreen,
         page: () => LoginScreen(),
         binding: Binding()),
     GetPage(
         name: Routes.signScreen,
-        page: ()=>  SignUpScreen(),
-        binding: Binding()
-    ),
+        page: () => SignUpScreen(),
+        binding: Binding()),
     GetPage(
         name: Routes.profileScreen,
-        page: ()=>   ProfileScreen(),
-        binding: Binding()
-    ),
+        page: () => ProfileScreen(),
+        binding: Binding()),
     GetPage(
         name: Routes.forgotPasswordScreen,
         page: () => ForgotPasswordScreen(),
@@ -49,7 +46,6 @@ class AppRoutes {
         name: Routes.otpPhoneScreen,
         page: () => OtpPhoneScreen(),
         binding: Binding()),
-
     GetPage(
         name: Routes.newPasswordScreen,
         page: () => NewPasswordScreen(),
@@ -62,10 +58,9 @@ class AppRoutes {
         name: Routes.logInWithPhoneScreen,
         page: () => LogInWithPhoneScreen(),
         binding: Binding()),
-
     GetPage(
         name: Routes.settingScreen,
-        page: () =>  SettingScreen(),
+        page: () => SettingScreen(),
         binding: Binding()),
   ];
 }

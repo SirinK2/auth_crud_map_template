@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SignInWithWidget extends StatelessWidget {
-  final String text;
-  final Function() onPressed;
-  final String images;
-
   const SignInWithWidget(
       {required this.onPressed,
       required this.text,
       Key? key,
       required this.images})
       : super(key: key);
+
+  final String text;
+  final Function() onPressed;
+  final String images;
 
   @override
   Widget build(BuildContext context) {
