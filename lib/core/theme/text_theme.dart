@@ -58,19 +58,19 @@ class CustomTextTheme {
         letterSpacing: 0.0,
       ),
       bodyLarge: GoogleFonts.ubuntu(
-        color: orangeColor,
+        color: mainColor,
         fontSize: 20,
         fontWeight: bold,
         letterSpacing: 0.0,
       ),
       bodyMedium: GoogleFonts.ubuntu(
-        color: orangeColor,
+        color: mainColor,
         fontSize: 16,
         fontWeight: medium,
         letterSpacing: 0.0,
       ),
       bodySmall: GoogleFonts.ubuntu(
-        color: orangeColor,
+        color: mainColor,
         fontSize: 12,
         fontWeight: regular,
         letterSpacing: 0.0,

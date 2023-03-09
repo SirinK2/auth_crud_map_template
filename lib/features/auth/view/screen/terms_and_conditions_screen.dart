@@ -24,7 +24,7 @@ class TermsAndConditionsScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 50),
                       Container(
-                        color: orangeColor,
+                        color: mainColor,
                       )
                     ]))));
   }

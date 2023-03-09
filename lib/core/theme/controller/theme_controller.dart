@@ -1,17 +1,18 @@
+import 'package:auth_crud_map_template/core/constants/keys.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
 class ThemeController {
   final GetStorage boxStorage = GetStorage();
-  final key = 'isDarkModes';
+
 
   saveThemeDataInBox(bool isDark) {
-    boxStorage.write(key, isDark);
+    boxStorage.write(AppKeys.darkKey, isDark);
   }
 
   bool getThemeDataFromBox() {
-    return boxStorage.read<bool>(key) ?? false;
+    return boxStorage.read<bool>(AppKeys.darkKey) ?? false;
   }
 
   ThemeMode get themeDataGet =>

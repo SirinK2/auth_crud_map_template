@@ -22,8 +22,7 @@ class ProfileWidget extends StatelessWidget {
               )
             ],
           ),
-           Divider(
-            color:Get.isDarkMode? containerBackground :blackColor,
+           const Divider(
             thickness: 1,
           ),
         ],

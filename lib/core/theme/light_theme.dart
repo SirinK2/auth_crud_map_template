@@ -8,20 +8,20 @@ ThemeData lightThemeData() {
   return ThemeData(
     fontFamily: GoogleFonts.ubuntu.toString(),
     primaryColor: whiteColor,
-    cardColor: containerBackground,
+    cardColor: lightColor,
     highlightColor: greyColor,
     splashColor: Colors.transparent,
-    canvasColor: containerBackground,
-    dialogBackgroundColor: containerBackground,
-    disabledColor: containerBackground,
-    dividerColor: containerBackground,
-    focusColor: containerBackground,
-    hintColor: containerBackground,
-    hoverColor: containerBackground,
-    indicatorColor: containerBackground,
-    primaryColorLight: containerBackground,
-    secondaryHeaderColor: containerBackground,
-    shadowColor: containerBackground,
+    canvasColor: lightColor,
+    dialogBackgroundColor: lightColor,
+    disabledColor: lightColor,
+    dividerColor: darkColor,
+    focusColor: lightColor,
+    hintColor: lightColor,
+    hoverColor: lightColor,
+    indicatorColor: lightColor,
+    primaryColorLight: lightColor,
+    secondaryHeaderColor: lightColor,
+    shadowColor: lightColor,
     brightness: Brightness.light,
     scaffoldBackgroundColor: whiteColor,
     //
@@ -32,11 +32,11 @@ ThemeData lightThemeData() {
       scrimColor: greyColor,
     ),
     //
-    iconTheme: const IconThemeData(color: orangeColor),
+    iconTheme: const IconThemeData(color: mainColor),
     //
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.transparent,
-      iconTheme: IconThemeData(color: orangeColor, size: 30),
+      iconTheme: IconThemeData(color: mainColor, size: 30),
       elevation: 0.0,
       shadowColor: greyColor,
       centerTitle: true,
@@ -46,7 +46,7 @@ ThemeData lightThemeData() {
       backgroundColor: whiteColor,
       elevation: 0.0,
       alignment: Alignment.center,
-      iconColor: orangeColor,
+      iconColor: mainColor,
       titleTextStyle: TextStyle(),
       contentTextStyle: TextStyle(),
       shape: RoundedRectangleBorder(
@@ -75,8 +75,8 @@ ThemeData lightThemeData() {
     //
     tabBarTheme: const TabBarTheme(
         unselectedLabelColor: whiteColor,
-        labelColor: orangeColor,
-        labelStyle: TextStyle(color: orangeColor),
+        labelColor: mainColor,
+        labelStyle: TextStyle(color: mainColor),
         indicator: UnderlineTabIndicator(
             borderSide: BorderSide(color: Colors.transparent))),
     //
@@ -84,11 +84,11 @@ ThemeData lightThemeData() {
         contentPadding: const EdgeInsets.symmetric(vertical: 2.0),
         fillColor: whiteColor,
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-        prefixIconColor: orangeColor,
-        suffixIconColor: orangeColor,
+        prefixIconColor: mainColor,
+        suffixIconColor: mainColor,
         focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
-            borderSide: const BorderSide(width: 1, color: orangeColor)),
+            borderSide: const BorderSide(width: 1, color: mainColor)),
         errorBorder: const OutlineInputBorder(
           borderSide: BorderSide(
             color: Colors.red,
@@ -107,7 +107,7 @@ ThemeData lightThemeData() {
           borderRadius: BorderRadius.circular(10),
         ),
         filled: true,
-        prefixStyle: const TextStyle(color: orangeColor)),
+        prefixStyle: const TextStyle(color: mainColor)),
     //
     tooltipTheme: TooltipThemeData(
       decoration: BoxDecoration(
@@ -131,22 +131,22 @@ ThemeData lightThemeData() {
           borderRadius: BorderRadius.circular(5),
         ),
         checkColor: MaterialStateProperty.all(whiteColor),
-        fillColor: MaterialStateProperty.all(orangeColor)),
+        fillColor: MaterialStateProperty.all(mainColor)),
     //
     switchTheme: SwitchThemeData(
-      thumbColor: MaterialStateProperty.all(orangeColor),
+      thumbColor: MaterialStateProperty.all(mainColor),
       trackColor: MaterialStateProperty.all(blackColor),
     ),
     //
     radioTheme:
-    RadioThemeData(fillColor: MaterialStateProperty.all(orangeColor)),
+    RadioThemeData(fillColor: MaterialStateProperty.all(mainColor)),
     //
     sliderTheme: const SliderThemeData(
-        thumbColor: orangeColor,
+        thumbColor: mainColor,
         thumbShape: RoundSliderThumbShape(enabledThumbRadius: 20)),
     //
     popupMenuTheme: PopupMenuThemeData(
-      color: orangeColor,
+      color: mainColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
       ),
