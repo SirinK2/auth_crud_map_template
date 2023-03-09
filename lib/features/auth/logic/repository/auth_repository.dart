@@ -2,15 +2,15 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-class AuthRepo {
+class AuthRepository {
   final firebaseAuth = FirebaseAuth.instance;
-  final user = FirebaseAuth.instance.currentUser;
 
   signUpWithEmailFirebase({
     required String email,
     required String password,
     required String name,
     required Function(String?) onDone,
+    required Function(String e) onError,
   }) async {
     try {
       UserCredential credential =
@@ -20,18 +20,12 @@ class AuthRepo {
       );
       if (credential.user?.uid != null) {
         print('uid : ${credential.user?.uid}');
-        user?.updateDisplayName(name);
+        credential.user?.updateDisplayName(name);
       }
 
       onDone(credential.user?.uid);
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'weak-password') {
-        print('The password provided is too weak.');
-      } else if (e.code == 'email-already-in-use') {
-        print('The account already exists for that email.');
-      }
-    } catch (e) {
-      print('the exp is $e');
+      onError(e.message.toString());
     }
   }
 
@@ -39,6 +33,7 @@ class AuthRepo {
     required String email,
     required String password,
     required Function(String?) onDone,
+    required Function(String e) onError,
   }) async {
     try {
       UserCredential credential = await firebaseAuth.signInWithEmailAndPassword(
@@ -47,41 +42,32 @@ class AuthRepo {
       );
       onDone(credential.user?.uid);
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'user-not-found') {
-        print('No user found for that email.');
-      } else if (e.code == 'wrong-password') {
-        print('Wrong password provided for that user.');
-      }
+      onError(e.message.toString());
     }
   }
 
   signInWithPhoneNumber({
     required String phoneNumber,
     required Function(String?) onDone,
+    required Function(String e) onError,
   }) async {
-   await firebaseAuth.verifyPhoneNumber(
+    await firebaseAuth.verifyPhoneNumber(
         phoneNumber: phoneNumber,
-        verificationCompleted: (PhoneAuthCredential credential) {
+        verificationCompleted: (PhoneAuthCredential credential) async {
+          await firebaseAuth.signInWithCredential(credential);
           print('PhoneAuthCredential $credential');
-
         },
         verificationFailed: (FirebaseAuthException e) {
           print('FirebaseAuthException $e');
-
         },
-        codeSent: (String verificationId, int? resendToken) {
-
-        },
-        codeAutoRetrievalTimeout: (String verificationId) {
-
-        },
-     timeout: const Duration(seconds: 60)
-
-    );
+        codeSent: (String verificationId, int? resendToken) {},
+        codeAutoRetrievalTimeout: (String verificationId) {},
+        timeout: const Duration(seconds: 60));
   }
 
   signInWithGoogle({
     required Function(String?) onDone,
+    required Function(String e) onError,
   }) async {
     try {
       late UserCredential cred;
@@ -90,7 +76,6 @@ class AuthRepo {
 
         googleProvider
             .addScope('https://www.googleapis.com/auth/contacts.readonly');
-        googleProvider.setCustomParameters({'login_hint': 'user@example.com'});
         cred = await FirebaseAuth.instance.signInWithPopup(googleProvider);
       } else {
         final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
@@ -105,8 +90,19 @@ class AuthRepo {
       }
 
       onDone(cred.user?.uid);
-    } catch (e) {
-      print("google $e");
+    } on FirebaseAuthException catch (e) {
+      onError(e.message.toString());
+    }
+  }
+
+  forgotPassword({
+    required String email,
+    required Function(String e) onError,
+  }) async {
+    try {
+      await firebaseAuth.sendPasswordResetEmail(email: email);
+    } on FirebaseAuthException catch (e) {
+      onError(e.message.toString());
     }
   }
 }

@@ -1,9 +1,13 @@
+import 'package:auth_crud_map_template/features/profile/model/profile_model.dart';
+import 'package:auth_crud_map_template/features/profile/repo/profile_repo.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ProfileController extends GetxController
-    with GetSingleTickerProviderStateMixin {
-  //personal info
+
+import '../../../core/routes/route.dart';
+
+class ProfileController extends GetxController {
+  ProfileRepository profileRepository = ProfileRepository();
   var profileName = 'Khairiah'.obs;
   var profilePhone = '0545401699'.obs;
   var profilePhoto = ''.obs;
@@ -67,6 +71,46 @@ class ProfileController extends GetxController
     update();
   }
 
-  //
 
+  UserModel? getUserInfo() {
+    return profileRepository.getUserInfo();
+  }
+
+  updateUserInfo({required UserModel userModel}) async {
+    await profileRepository.updateUserInfo(
+      userModel: userModel,
+      onError: () {
+        Get.snackbar('something went wrong', '');
+      },
+    );
+  }
+
+  changePassword({
+    required String newPassword,
+  }) async {
+    await profileRepository.changePassword(
+      newPassword: newPassword,
+      onError: (e) {
+        print(e);
+        Get.snackbar('something went wrong', e);
+      },
+      onDone: () {
+        Get.offNamed(Routes.successfullyScreen);
+      },
+    );
+  }
+
+  signOut() async {
+    await profileRepository.signOut(
+      onError: (String e) {
+        Get.snackbar(
+          'something went wrong',
+          e,
+        );
+      },
+      onDone: () {
+        Get.offAllNamed(Routes.loginScreen);
+      },
+    );
+  }
 }

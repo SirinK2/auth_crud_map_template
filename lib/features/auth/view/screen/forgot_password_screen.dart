@@ -32,7 +32,8 @@ class ForgotPasswordScreen extends StatelessWidget {
                     ),
                     SendToWidget(
                       authController: authController,
-                      onPressed: () {
+                      onPressed: () async {
+                        await authController.forgotPassword(authController.emailController.text);
                         Get.offNamed(Routes.loginScreen);
                       },
                       text: 'Enter your Email ',

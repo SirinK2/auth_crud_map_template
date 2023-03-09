@@ -3,10 +3,11 @@ import 'package:get/get.dart';
 
 import 'package:timer_count_down/timer_controller.dart';
 import '../../../../core/routes/route.dart';
-import '../repo/auth_repo.dart';
+import '../repository/auth_repository.dart';
 
 class AuthController extends GetxController {
-  final AuthRepo _authRepo = AuthRepo();
+  final AuthRepository _authRepo = AuthRepository();
+
   //CheckBox
   bool isChecked = false;
 
@@ -44,14 +45,11 @@ class AuthController extends GetxController {
   TextEditingController checkPasswordController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
 
-
 //fun for Password icon
   void visibility() {
     isVisibility = !isVisibility;
     update();
   }
-
-
 
 //fun for CheckBox
   void checkBox(bool val) {
@@ -70,11 +68,16 @@ class AuthController extends GetxController {
         name: name,
         onDone: (String? uid) {
           if (uid != null) {
-            print('uid $uid');
-            Get.toNamed(Routes.profileScreen);
+            Get.offNamed(Routes.profileScreen);
           } else {
             Get.snackbar('error', 'message');
           }
+        },
+        onError: (String e) {
+          Get.snackbar(
+            'something went wrong',
+            e,
+          );
         });
   }
 
@@ -87,11 +90,14 @@ class AuthController extends GetxController {
       password: password,
       onDone: (String? uid) {
         if (uid != null) {
-          print('uid $uid');
           Get.toNamed(Routes.profileScreen);
-        } else {
-          Get.snackbar('error', 'message');
         }
+      },
+      onError: (String e) {
+        Get.snackbar(
+          'something went wrong',
+          e,
+        );
       },
     );
   }
@@ -103,11 +109,16 @@ class AuthController extends GetxController {
       phoneNumber: phoneNum,
       onDone: (String? uid) {
         if (uid != null) {
-          print('uid $uid');
           Get.toNamed(Routes.profileScreen);
         } else {
           Get.snackbar('error', 'message');
         }
+      },
+      onError: (String e) {
+        Get.snackbar(
+          'something went wrong',
+          e,
+        );
       },
     );
   }
@@ -116,12 +127,28 @@ class AuthController extends GetxController {
     await _authRepo.signInWithGoogle(
       onDone: (String? uid) {
         if (uid != null) {
-          print('uid $uid');
           Get.toNamed(Routes.profileScreen);
         } else {
           Get.snackbar('error', 'message');
         }
       },
+      onError: (String e) {
+        Get.snackbar(
+          'something went wrong',
+          e,
+        );
+      },
     );
+  }
+
+  forgotPassword(String email) async {
+    await _authRepo.forgotPassword(
+        email: email,
+        onError: (String e) {
+          Get.snackbar(
+            'something went wrong',
+            e,
+          );
+        });
   }
 }
