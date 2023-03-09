@@ -9,6 +9,7 @@ class TextFieldWidget extends StatelessWidget {
   final Widget? suffixIcon;
   final String label;
   final String? numCode;
+  final bool? enabled;
 
   const TextFieldWidget({
     required this.controller,
@@ -18,7 +19,7 @@ class TextFieldWidget extends StatelessWidget {
     this.numCode,
     this.suffixIcon,
     Key? key,
-    required this.label,
+    required this.label, this.enabled,
   }) : super(key: key);
 
   @override
@@ -26,10 +27,11 @@ class TextFieldWidget extends StatelessWidget {
     return SizedBox(
         width: 382,
         child: TextFormField(
+          enabled: enabled,
           style: Theme.of(context).textTheme.titleSmall ,
           controller: controller,
           obscureText: obscureText,
-          cursorColor: orangeColor,
+          cursorColor: mainColor,
           keyboardType: TextInputType.text,
           validator: (value) => validator(value),
           decoration: InputDecoration(

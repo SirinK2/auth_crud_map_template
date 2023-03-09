@@ -4,7 +4,6 @@ import 'package:auth_crud_map_template/core/constants/validation.dart';
 import 'package:auth_crud_map_template/core/routes/route.dart';
 import 'package:auth_crud_map_template/features/auth/view/widget/checkbox_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 
 import '../../logic/controller/auth_controller.dart';

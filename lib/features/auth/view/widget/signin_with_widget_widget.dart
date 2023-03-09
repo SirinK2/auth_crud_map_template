@@ -25,16 +25,16 @@ class SignInWithWidget extends StatelessWidget {
               minimumSize: const Size(382, 41),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(5)),
-              foregroundColor: Get.isDarkMode ? darkGreyColor : whiteColor,
+              foregroundColor: Get.isDarkMode ? darkColor : whiteColor,
               elevation: 0.4,
-              backgroundColor: Get.isDarkMode ? darkGreyColor : whiteColor,
-              side: const BorderSide(color: orangeColor),
+              backgroundColor: Get.isDarkMode ? darkColor : whiteColor,
+              side: const BorderSide(color: mainColor),
               padding: const EdgeInsets.symmetric(vertical: 2)),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(height: 15, width: 15, child: Image.asset(images)),
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               Text(text, style: Theme.of(context).textTheme.bodySmall),
             ],
           )),

@@ -6,41 +6,41 @@ import 'text_theme.dart';
 ThemeData darkThemeData() {
   return ThemeData(
     fontFamily: GoogleFonts.ubuntu.toString(),
-    primaryColor: darkGreyColor,
-    cardColor: containerBackground,
-    highlightColor: greyColor,
+    primaryColor: darkColor,
+    cardColor: darkGreyColor,
+    highlightColor: darkGreyColor,
     splashColor: Colors.transparent,
-    canvasColor: containerBackground,
-    dialogBackgroundColor: darkGreyColor,
-    disabledColor: darkGreyColor,
-    dividerColor: darkGreyColor,
-    focusColor: containerBackground,
-    hintColor: containerBackground,
-    hoverColor: containerBackground,
-    indicatorColor: containerBackground,
-    primaryColorDark: darkGreyColor,
-    secondaryHeaderColor: darkGreyColor,
-    shadowColor: containerBackground,
+    canvasColor: lightColor,
+    dialogBackgroundColor: darkColor,
+    disabledColor: darkColor,
+    dividerColor: lightColor,
+    focusColor: lightColor,
+    hintColor: lightColor,
+    hoverColor: darkGreyColor,
+    indicatorColor: lightColor,
+    primaryColorDark: darkColor,
+    secondaryHeaderColor: darkColor,
+    shadowColor: lightColor,
     brightness: Brightness.dark,
-    scaffoldBackgroundColor: darkGreyColor,
+    scaffoldBackgroundColor: darkColor,
     //
     textTheme: CustomTextTheme.textThemeDark,
     //
-    iconTheme: const IconThemeData(color: orangeColor),
+    iconTheme: const IconThemeData(color: mainColor),
     //
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.transparent,
-      iconTheme: IconThemeData(color: orangeColor, size: 30),
+      iconTheme: IconThemeData(color: mainColor, size: 30),
       elevation: 0.0,
       shadowColor: greyColor,
       centerTitle: true,
     ),
     //
     dialogTheme: const DialogTheme(
-      backgroundColor: darkGreyColor,
+      backgroundColor: darkColor,
       elevation: 0.0,
       alignment: Alignment.center,
-      iconColor: orangeColor,
+      iconColor: mainColor,
       titleTextStyle: TextStyle(),
       contentTextStyle: TextStyle(),
       shape: RoundedRectangleBorder(
@@ -54,9 +54,9 @@ ThemeData darkThemeData() {
         style: ElevatedButton.styleFrom(
       minimumSize: const Size(382, 41),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-      foregroundColor: darkGreyColor,
+      foregroundColor: darkColor,
       elevation: 0.4,
-      backgroundColor: containerBackground,
+      backgroundColor: lightColor,
     )),
     //
     outlinedButtonTheme: OutlinedButtonThemeData(
@@ -64,27 +64,27 @@ ThemeData darkThemeData() {
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
             foregroundColor: greyColor,
-            side:  BorderSide(color: greyColor),
+            side:  const BorderSide(color: greyColor),
             padding: const EdgeInsets.symmetric(vertical: 20))),
     //
     tabBarTheme: const TabBarTheme(
         unselectedLabelColor: whiteColor,
-        labelColor: orangeColor,
-        labelStyle: TextStyle(color: orangeColor),
+        labelColor: mainColor,
+        labelStyle: TextStyle(color: mainColor),
         indicator: UnderlineTabIndicator(
-            borderSide: BorderSide(color: containerBackground))),
+            borderSide: BorderSide(color: lightColor))),
     //
     inputDecorationTheme: InputDecorationTheme(
         contentPadding: const EdgeInsets.symmetric(vertical: 2.0),
-        fillColor: darkGreyColor,
+        fillColor: darkColor,
         border: OutlineInputBorder(
-          borderSide:BorderSide(color: containerBackground) ,
+          borderSide:const BorderSide(color: lightColor) ,
             borderRadius: BorderRadius.circular(10)),
-        prefixIconColor: orangeColor,
-        suffixIconColor: orangeColor,
+        prefixIconColor: mainColor,
+        suffixIconColor: mainColor,
         focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
-            borderSide: const BorderSide(width: 1, color: orangeColor)),
+            borderSide: const BorderSide(width: 1, color: mainColor)),
         errorBorder: const OutlineInputBorder(
           borderSide: BorderSide(
             color: Colors.red,
@@ -98,12 +98,12 @@ ThemeData darkThemeData() {
         ),
         enabledBorder: OutlineInputBorder(
           borderSide: const BorderSide(
-            color: containerBackground,
+            color: lightColor,
           ),
           borderRadius: BorderRadius.circular(10),
         ),
         filled: true,
-        prefixStyle: const TextStyle(color: orangeColor)),
+        prefixStyle: const TextStyle(color: mainColor)),
     //
     tooltipTheme: TooltipThemeData(
       decoration: BoxDecoration(
@@ -115,7 +115,7 @@ ThemeData darkThemeData() {
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
         foregroundColor: greyColor,
-        backgroundColor: darkGreyColor,
+        backgroundColor: darkColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
         ),
@@ -126,27 +126,27 @@ ThemeData darkThemeData() {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(5),
         ),
-        checkColor: MaterialStateProperty.all(darkGreyColor),
-        fillColor: MaterialStateProperty.all(orangeColor)),
+        checkColor: MaterialStateProperty.all(darkColor),
+        fillColor: MaterialStateProperty.all(mainColor)),
     //
     switchTheme: SwitchThemeData(
-      thumbColor: MaterialStateProperty.all(orangeColor),
+      thumbColor: MaterialStateProperty.all(mainColor),
       trackColor: MaterialStateProperty.all(whiteColor)),
     //
     radioTheme:
-        RadioThemeData(fillColor: MaterialStateProperty.all(orangeColor)),
+        RadioThemeData(fillColor: MaterialStateProperty.all(mainColor)),
     //
     sliderTheme: const SliderThemeData(
-        thumbColor: orangeColor,
+        thumbColor: mainColor,
         thumbShape: RoundSliderThumbShape(enabledThumbRadius: 20)),
     //
     popupMenuTheme: PopupMenuThemeData(
-      color: orangeColor,
+      color: mainColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
       ),
       elevation: 0.0,
-      shadowColor: containerBackground,
+      shadowColor: lightColor,
       // surfaceTintColor:,
       textStyle: const TextStyle(color: whiteColor),
       // labelTextStyle:,

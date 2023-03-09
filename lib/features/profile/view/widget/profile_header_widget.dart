@@ -25,7 +25,7 @@ class ProfileHeaderWidget extends StatelessWidget {
               height: 100,
               width: 100,
               decoration: BoxDecoration(
-                color: containerBackground,
+                color: lightColor,
                 shape: BoxShape.circle,
                 image: DecorationImage(
                   image: profileController.profilePhoto.value == ""
@@ -60,21 +60,13 @@ class ProfileHeaderWidget extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            const SizedBox(
-              width: 30,
-            ),
-            Text(
-              name,
-              style: theme.headlineLarge,
-            ),
-            IconButton(
-              icon: const Icon(
-                Icons.edit,
-              ),
-              onPressed: () {},
-            ),
-          ]),
+          const SizedBox(
+            width: 30,
+          ),
+          Text(
+            name,
+            style: theme.headlineLarge,
+          ),
           Text(
             email,
             style: theme.headlineSmall,

@@ -6,10 +6,10 @@ import 'package:auth_crud_map_template/features/auth/view/screen/signup_screen.d
 import 'package:auth_crud_map_template/features/auth/view/screen/successfully_screen.dart';
 import 'package:auth_crud_map_template/features/auth/view/screen/terms_and_conditions_screen.dart';
 import 'package:auth_crud_map_template/features/profile/view/screen/new_pasword_screen.dart';
+import 'package:auth_crud_map_template/features/profile/view/screen/perssonal_information.dart';
 import 'package:auth_crud_map_template/home_screen.dart';
 import 'package:get/get.dart';
 import '../../features/profile/view/screen/profile_screen.dart';
-import '../../features/setting/view/screen/settings_screen.dart';
 import '../binding/binding.dart';
 
 class AppRoutes {
@@ -55,8 +55,8 @@ class AppRoutes {
         page: () => LogInWithPhoneScreen(),
         binding: Binding()),
     GetPage(
-        name: Routes.settingScreen,
-        page: () => SettingScreen(),
+        name: Routes.personalInformation,
+        page: () =>  PersonalInformationScreen(),
         binding: Binding()),
   ];
 }
@@ -72,5 +72,6 @@ class Routes {
   static const successfullyScreen = '/successfully_screen';
   static const profileScreen = '/profile_screen';
   static const logInWithPhoneScreen = '/login_with_phone_screen';
-  static const settingScreen = '/setting_screen';
+  static const personalInformation = '/personal_information';
+
 }
