@@ -31,12 +31,13 @@ class LogInWithPhoneScreen extends StatelessWidget {
                       },
                     ),
                     SendToWidget(
+                      controller: authController.phoneController,
+                      hintText: '5********',
                       authController: authController,
                       onPressed: () async {
                         await authController.signInWithPhone('+966 ${authController.phoneController.text}');
                       },
                       text: 'Enter your Phone Number ',
-                      label: 'Phone Number',
                       validator: (value) {
                         if (value.toString().isEmpty) {
                           return 'Enter your Password';

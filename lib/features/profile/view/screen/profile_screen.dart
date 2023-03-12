@@ -37,15 +37,15 @@ class ProfileScreen extends StatelessWidget {
                   const SizedBox(height: 50),
                   ProfileHeaderWidget(
                     profileController: profileController,
-                    name: profileController.profileName.value,
-                    email: profileController.profileEmail.value,
+                    name: profileController.nameController.text,
+                    email: profileController.emailController.text,
                   ),
                   const SizedBox(height: 60),
                   ProfileWidget(
                     text: 'Personal Information',
-                    onTap: () async {
-                      await profileController.getUserInfo();
-                      // Get.offNamed(Routes.personalInformation);
+                    onTap: () {
+                       // profileController.getUserInfo();
+                      Get.offNamed(Routes.personalInformation);
                     },
                   ),
                   LocalizationWidget(

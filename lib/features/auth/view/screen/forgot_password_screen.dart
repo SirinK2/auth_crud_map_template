@@ -31,13 +31,14 @@ class ForgotPasswordScreen extends StatelessWidget {
                       },
                     ),
                     SendToWidget(
+                      hintText: 'email@gmail.com',
+                      controller: authController.emailController,
                       authController: authController,
                       onPressed: () async {
                         await authController.forgotPassword(authController.emailController.text);
                         Get.offNamed(Routes.loginScreen);
                       },
                       text: 'Enter your Email ',
-                      label: 'Email',
                       validator: (value) {
                         if (!RegExp(Validation.validationEmail)
                             .hasMatch(value)) {
