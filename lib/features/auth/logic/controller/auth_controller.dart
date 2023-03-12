@@ -1,5 +1,7 @@
+import 'package:auth_crud_map_template/core/constants/keys.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 import 'package:timer_count_down/timer_controller.dart';
 import '../../../../core/routes/route.dart';
@@ -7,7 +9,7 @@ import '../repository/auth_repository.dart';
 
 class AuthController extends GetxController {
   final AuthRepository _authRepo = AuthRepository();
-
+  GetStorage authStorage = GetStorage();
   //CheckBox
   bool isChecked = false;
 
@@ -63,22 +65,22 @@ class AuthController extends GetxController {
     String name,
   ) async {
     await _authRepo.signUpWithEmailFirebase(
-        email: email,
-        password: password,
-        name: name,
-        onDone: (String? uid) {
-          if (uid != null) {
-            Get.offNamed(Routes.profileScreen);
-          } else {
-            Get.snackbar('error', 'message');
-          }
-        },
-        onError: (String e) {
-          Get.snackbar(
-            'something went wrong',
-            e,
-          );
-        });
+      email: email,
+      password: password,
+      name: name,
+      onDone: (String? uid) {
+        if (uid != null) {
+          authStorage.write(AppKeys.authKey, uid);
+          Get.offNamed(Routes.profileScreen);
+        }
+      },
+      onError: (String e) {
+        Get.snackbar(
+          'something went wrong',
+          e,
+        );
+      },
+    );
   }
 
   signInWithEmail(
@@ -90,6 +92,7 @@ class AuthController extends GetxController {
       password: password,
       onDone: (String? uid) {
         if (uid != null) {
+          authStorage.write(AppKeys.authKey, uid);
           Get.toNamed(Routes.profileScreen);
         }
       },
@@ -107,11 +110,12 @@ class AuthController extends GetxController {
   ) async {
     await _authRepo.signInWithPhoneNumber(
       phoneNumber: phoneNum,
-      onDone: (String? uid) {
-        if (uid != null) {
-          Get.toNamed(Routes.profileScreen);
-        } else {
-          Get.snackbar('error', 'message');
+      onDone: (String? verificationId) {
+        if (verificationId != null) {
+          Get.toNamed(
+            Routes.otpPhoneScreen,
+            arguments: verificationId,
+          );
         }
       },
       onError: (String e) {
@@ -123,13 +127,26 @@ class AuthController extends GetxController {
     );
   }
 
+  verifyPhoneNum(String verificationId, String smsCode) {
+    _authRepo.verificationPhoneNumber(
+      verificationId: verificationId,
+      smsCode: smsCode,
+      onDone: (String? uid) {
+        if (uid != null) {
+          authStorage.write(AppKeys.authKey, uid);
+          print(uid);
+          Get.offNamed(Routes.successfullyScreen);
+        }
+      },
+    );
+  }
+
   signInWithGoogle() async {
     await _authRepo.signInWithGoogle(
       onDone: (String? uid) {
         if (uid != null) {
+          authStorage.write(AppKeys.authKey, uid);
           Get.toNamed(Routes.profileScreen);
-        } else {
-          Get.snackbar('error', 'message');
         }
       },
       onError: (String e) {
@@ -143,12 +160,13 @@ class AuthController extends GetxController {
 
   forgotPassword(String email) async {
     await _authRepo.forgotPassword(
-        email: email,
-        onError: (String e) {
-          Get.snackbar(
-            'something went wrong',
-            e,
-          );
-        });
+      email: email,
+      onError: (String e) {
+        Get.snackbar(
+          'something went wrong',
+          e,
+        );
+      },
+    );
   }
 }

@@ -35,7 +35,7 @@ class SendToWidget extends StatelessWidget {
             style: theme.headlineLarge,
           ),
           TextFieldWidget(
-            controller: authController.emailController,
+            controller: authController.phoneController,
             obscureText: false,
             validator: validator,
             prefixIcon: const Icon(Icons.email),

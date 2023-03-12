@@ -1,13 +1,16 @@
+import 'package:auth_crud_map_template/core/constants/keys.dart';
 import 'package:auth_crud_map_template/features/profile/model/profile_model.dart';
 import 'package:auth_crud_map_template/features/profile/repo/profile_repo.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 
 import '../../../core/routes/route.dart';
 
 class ProfileController extends GetxController {
   ProfileRepository profileRepository = ProfileRepository();
+  GetStorage authStorage = GetStorage();
   var profileName = 'Khairiah'.obs;
   var profilePhone = '0545401699'.obs;
   var profilePhoto = ''.obs;
@@ -72,8 +75,16 @@ class ProfileController extends GetxController {
   }
 
 
-  UserModel? getUserInfo() {
-    return profileRepository.getUserInfo();
+  UserModel? getUserInfo()  {
+     var user = profileRepository.getUserInfo(
+       authStorage.read(AppKeys.authKey)
+     );
+     // nameController.text = user?.displayName;
+     print('phoneNumber : ${user?.phoneNumber}');
+     print('email : ${user?.email}');
+     print('displayName : ${user?.displayName}');
+     print('photoURL : ${user?.photoURL}');
+     return user;
   }
 
   updateUserInfo({required UserModel userModel}) async {
@@ -81,7 +92,8 @@ class ProfileController extends GetxController {
       userModel: userModel,
       onError: () {
         Get.snackbar('something went wrong', '');
-      },
+      }, uid: authStorage.read(AppKeys.authKey)
+      ,
     );
   }
 
@@ -89,6 +101,7 @@ class ProfileController extends GetxController {
     required String newPassword,
   }) async {
     await profileRepository.changePassword(
+      uid: authStorage.read(AppKeys.authKey),
       newPassword: newPassword,
       onError: (e) {
         print(e);
@@ -109,6 +122,7 @@ class ProfileController extends GetxController {
         );
       },
       onDone: () {
+        authStorage.remove(AppKeys.authKey);
         Get.offAllNamed(Routes.loginScreen);
       },
     );

@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -51,18 +52,49 @@ class AuthRepository {
     required Function(String?) onDone,
     required Function(String e) onError,
   }) async {
-    await firebaseAuth.verifyPhoneNumber(
-        phoneNumber: phoneNumber,
-        verificationCompleted: (PhoneAuthCredential credential) async {
-          await firebaseAuth.signInWithCredential(credential);
-          print('PhoneAuthCredential $credential');
-        },
-        verificationFailed: (FirebaseAuthException e) {
-          print('FirebaseAuthException $e');
-        },
-        codeSent: (String verificationId, int? resendToken) {},
-        codeAutoRetrievalTimeout: (String verificationId) {},
-        timeout: const Duration(seconds: 60));
+    try {
+      print('object');
+      await firebaseAuth.verifyPhoneNumber(
+          phoneNumber: phoneNumber,
+          verificationCompleted: (PhoneAuthCredential credential) async {
+            await firebaseAuth.signInWithCredential(credential);
+            // onDone(credential.smsCode);
+            print(credential.smsCode);
+            print('PhoneAuthCredential $credential');
+          },
+          verificationFailed: (FirebaseAuthException e) {
+            print('FirebaseAuthException $e');
+          },
+          codeSent: (String verificationId, int? resendToken) {
+            print("verificationId : $verificationId");
+            onDone(verificationId);
+
+            print('resendToken : $resendToken');
+          },
+          codeAutoRetrievalTimeout: (String verificationId) {
+            print('verificationId $verificationId');
+          },
+          timeout: const Duration(seconds: 60));
+      print('jhjk');
+    } on FirebaseAuthException catch (e) {
+      onError(e.message.toString());
+    }
+  }
+
+  Future<void> verificationPhoneNumber({
+    required String verificationId,
+    required String smsCode,
+    required Function(String? uid) onDone,
+  }) async {
+    PhoneAuthCredential credential = PhoneAuthProvider.credential(
+        verificationId: verificationId, smsCode: smsCode);
+    UserCredential cred = await firebaseAuth.signInWithCredential(credential);
+    if(cred.user?.uid != null){
+      cred.user?.updatePassword('s-12344321');
+      cred.user?.updateDisplayName('si-ren');
+      cred.user?.updatePhotoURL('https://images.unsplash.com/photo-1581456495146-65a71b2c8e52?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1286&q=80');
+    }
+    onDone(cred.user?.uid);
   }
 
   signInWithGoogle({

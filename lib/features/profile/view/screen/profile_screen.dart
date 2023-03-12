@@ -43,8 +43,9 @@ class ProfileScreen extends StatelessWidget {
                   const SizedBox(height: 60),
                   ProfileWidget(
                     text: 'Personal Information',
-                    onTap: () {
-                      Get.offNamed(Routes.personalInformation);
+                    onTap: () async {
+                      await profileController.getUserInfo();
+                      // Get.offNamed(Routes.personalInformation);
                     },
                   ),
                   LocalizationWidget(
@@ -54,7 +55,7 @@ class ProfileScreen extends StatelessWidget {
                     profileController: profileController,
                   ),
                   const SizedBox(height: 20),
-                  const LogOutWidget(),
+                   LogOutWidget(),
                 ],
               ),
             ),

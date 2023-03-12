@@ -92,7 +92,16 @@ class OtpPhoneScreen extends StatelessWidget {
                             const SizedBox(height: 50),
                             ElevatedButton(
                                 onPressed: () {
-                                  Get.offNamed(Routes.successfullyScreen);
+                                  authController.verifyPhoneNum(
+                                    Get.arguments,
+                                    authController.otp1Controller.text +
+                                        authController.otp2Controller.text +
+                                        authController.otp3Controller.text +
+                                        authController.otp4Controller.text +
+                                        authController.otp5Controller.text +
+                                        authController.otp6Controller.text,
+                                  );
+                                  // Get.offNamed(Routes.successfullyScreen);
                                 },
                                 child: const Text('Send'))
                           ]),
