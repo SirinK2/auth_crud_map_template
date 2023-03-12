@@ -13,7 +13,7 @@ class ProfileController extends GetxController {
   GetStorage authStorage = GetStorage();
   var profileName = 'Khairiah'.obs;
   var profilePhone = '0545401699'.obs;
-  var profilePhoto = ''.obs;
+  var profilePhoto = '';
   var profileEmail = 'khairiahalayyafi@gmail.com'.obs;
 
   //change the Language to arabic
@@ -43,9 +43,10 @@ class ProfileController extends GetxController {
   ///////////////////onInit///////////////////////////
   @override
   void onInit() {
-    getEmail();
-    getPhone();
-    getName();
+    // getEmail();
+    // getPhone();
+    // getName();
+    getUserInfo();
     super.onInit();
   }
   ///////////////////////////////////////////////////
@@ -79,7 +80,10 @@ class ProfileController extends GetxController {
      var user = profileRepository.getUserInfo(
        authStorage.read(AppKeys.authKey)
      );
-     // nameController.text = user?.displayName;
+     nameController.text = "${user?.displayName}";
+     emailController.text = "${user?.email}";
+     profilePhoto = "${user?.photoURL}";
+
      print('phoneNumber : ${user?.phoneNumber}');
      print('email : ${user?.email}');
      print('displayName : ${user?.displayName}');

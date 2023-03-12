@@ -9,14 +9,14 @@ class SendToWidget extends StatelessWidget {
       required this.authController,
       required this.onPressed,
       required this.text,
-      required this.label,
-      required this.validator})
+      required this.validator, required this.hintText, required this.controller})
       : super(key: key);
   final Function() onPressed;
   final AuthController authController;
   final String text;
-  final String label;
+  final String hintText;
   final Function validator;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -35,11 +35,12 @@ class SendToWidget extends StatelessWidget {
             style: theme.headlineLarge,
           ),
           TextFieldWidget(
-            controller: authController.phoneController,
+            hintText: hintText,
+            text: text,
+            controller: controller,
             obscureText: false,
             validator: validator,
             prefixIcon: const Icon(Icons.email),
-            label: label,
             // height: 50,
           ),
           ElevatedButton(

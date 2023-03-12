@@ -28,10 +28,10 @@ class ProfileHeaderWidget extends StatelessWidget {
                 color: lightColor,
                 shape: BoxShape.circle,
                 image: DecorationImage(
-                  image: profileController.profilePhoto.value == ""
+                  image: profileController.profilePhoto == ""
                       ? AssetImage(AppImages.profileImage) as ImageProvider
                       : NetworkImage(
-                          profileController.profilePhoto.value,
+                          profileController.profilePhoto,
                         ),
                   fit: BoxFit.cover,
                 ),
