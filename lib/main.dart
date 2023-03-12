@@ -1,4 +1,4 @@
-import 'package:auth_crud_map_template/core/localization/controller/locale_controller.dart';
+import 'package:auth_crud_map_template/core/localization/controller/localization_controller.dart';
 import 'package:auth_crud_map_template/core/routes/route.dart';
 import 'package:auth_crud_map_template/core/theme/controller/theme_controller.dart';
 import 'package:auth_crud_map_template/core/theme/theme.dart';
@@ -10,6 +10,7 @@ import 'core/localization/translations/translations_map.dart';
 import 'firebase_options.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await GetStorage.init();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      locale: LocaleController().initialLanguage,
+      locale: LocalizationController().initialLanguage,
       translations: TranslationsMap(),
       themeMode: ThemeController().themeDataGet,
       theme: ThemeApp.lightTheme,

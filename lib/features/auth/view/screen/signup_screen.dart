@@ -153,7 +153,9 @@ class SignUpScreen extends StatelessWidget {
                           supTitle: 'Terms & Conditions',
                         ),
                         ElevatedButton(
-                          onPressed: () async {},
+                          onPressed: () async {
+                            // authController.signInWithEmail(, password)
+                          },
                           child: const Text('Signup'),
                         ),
                         Row(
