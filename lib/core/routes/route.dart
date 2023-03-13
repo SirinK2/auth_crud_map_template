@@ -59,6 +59,10 @@ class AppRoutes {
         name: Routes.personalInformation,
         page: () =>  PersonalInformationScreen(),
         binding: Binding()),
+    GetPage(
+        name: Routes.personalInformation,
+        page: () =>  PersonalInformationScreen(),
+        binding: Binding()),
   ];
 }
 
@@ -74,5 +78,6 @@ class Routes {
   static const profileScreen = '/profile_screen';
   static const logInWithPhoneScreen = '/login_with_phone_screen';
   static const personalInformation = '/personal_information';
+  static const shopScreen = '/shop_screen';
 
 }

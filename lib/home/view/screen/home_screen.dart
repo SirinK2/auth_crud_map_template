@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:auth_crud_map_template/core/routes/route.dart';
 
+import '../../../features/crud/view/screen/shop.dart';
+
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
   final sittingController = Get.find<HomeController>();
@@ -37,7 +39,9 @@ class HomeScreen extends StatelessWidget {
                       )),
                   const SizedBox(height: 10),
                   ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.toNamed(Routes.shopScreen);
+                      },
                       child: const Text(
                         'Crud',
                       )),
