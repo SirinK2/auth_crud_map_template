@@ -1,6 +1,6 @@
 import 'package:auth_crud_map_template/common/header_widget.dart';
 import 'package:auth_crud_map_template/core/routes/route.dart';
-import 'package:auth_crud_map_template/features/profile/controller/profile_conroller.dart';
+import '../../logic/controller/profile_conroller.dart';
 import 'package:auth_crud_map_template/features/profile/view/widget/darkmode_widget.dart';
 import 'package:auth_crud_map_template/features/profile/view/widget/logout_widget.dart';
 import 'package:auth_crud_map_template/features/profile/view/widget/localization_widget.dart';

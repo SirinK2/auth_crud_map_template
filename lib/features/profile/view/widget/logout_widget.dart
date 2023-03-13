@@ -1,6 +1,7 @@
-import 'package:auth_crud_map_template/features/profile/controller/profile_conroller.dart';
+import '../../logic/controller/profile_conroller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 
 class LogOutWidget extends StatelessWidget {
    LogOutWidget({Key? key}) : super(key: key);

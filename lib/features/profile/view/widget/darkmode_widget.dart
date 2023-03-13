@@ -1,6 +1,6 @@
 import 'package:auth_crud_map_template/core/constants/colors_app.dart';
 import 'package:auth_crud_map_template/core/theme/controller/theme_controller.dart';
-import 'package:auth_crud_map_template/features/profile/controller/profile_conroller.dart';
+import '../../logic/controller/profile_conroller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
