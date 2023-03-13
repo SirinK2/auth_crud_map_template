@@ -1,9 +1,7 @@
 import 'package:auth_crud_map_template/common/header_widget.dart';
 import 'package:auth_crud_map_template/core/routes/route.dart';
 import '../../logic/controller/profile_conroller.dart';
-import 'package:auth_crud_map_template/features/profile/view/widget/darkmode_widget.dart';
 import 'package:auth_crud_map_template/features/profile/view/widget/logout_widget.dart';
-import 'package:auth_crud_map_template/features/profile/view/widget/localization_widget.dart';
 import 'package:auth_crud_map_template/features/profile/view/widget/profile_header_widget.dart';
 import 'package:auth_crud_map_template/features/profile/view/widget/profile_widget.dart';
 import 'package:flutter/material.dart';
@@ -47,12 +45,6 @@ class ProfileScreen extends StatelessWidget {
                        // profileController.getUserInfo();
                       Get.offNamed(Routes.personalInformation);
                     },
-                  ),
-                  LocalizationWidget(
-                    profileController: profileController,
-                  ),
-                  DarkModeWidget(
-                    profileController: profileController,
                   ),
                   const SizedBox(height: 20),
                    LogOutWidget(),

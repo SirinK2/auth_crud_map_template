@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class HeaderWidget extends StatelessWidget {
   const HeaderWidget({Key? key, required this.onPressed, this.title})
       : super(key: key);

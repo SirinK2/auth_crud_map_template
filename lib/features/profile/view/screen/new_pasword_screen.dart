@@ -28,7 +28,6 @@ class NewPasswordScreen extends StatelessWidget {
                       },
                     ),
                     NewPasswordWidget(profileController: profileController,)
-
                   ]))));
     });
   }

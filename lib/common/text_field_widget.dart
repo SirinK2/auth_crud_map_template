@@ -29,21 +29,26 @@ class TextFieldWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context).textTheme;
     return SizedBox(
         width: 382,
         child: Column(
           children: [
             Align(
               alignment: Alignment.topLeft,
-              child: text == null ? null :Text(
-                "$text",
-                style: Theme.of(context).textTheme.bodySmall,
-              ),
+              child: text == null
+                  ? null
+                  : Text(
+                      "$text",
+                      style: theme.bodySmall,
+                    ),
             ),
-            SizedBox(height: 10,),
+            const SizedBox(
+              height: 10,
+            ),
             TextFormField(
               enabled: enabled,
-              style: Theme.of(context).textTheme.titleSmall,
+              style: theme.titleSmall,
               controller: controller,
               obscureText: obscureText,
               cursorColor: mainColor,
@@ -51,7 +56,7 @@ class TextFieldWidget extends StatelessWidget {
               validator: (value) => validator(value),
               decoration: InputDecoration(
                 hintText: hintText,
-                labelStyle: Theme.of(context).textTheme.bodySmall,
+                labelStyle: theme.bodySmall,
                 labelText: label,
                 prefixIcon: prefixIcon,
                 prefixText: numCode,
@@ -62,4 +67,3 @@ class TextFieldWidget extends StatelessWidget {
         ));
   }
 }
-

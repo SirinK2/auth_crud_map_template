@@ -1,16 +1,20 @@
-
+import 'package:auth_crud_map_template/home/controller/home_controller.dart';
+import 'package:auth_crud_map_template/home/view/widget/darkmode_widget.dart';
+import 'package:auth_crud_map_template/home/view/widget/localization_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:auth_crud_map_template/core/routes/route.dart';
-import 'dart:io' show Platform;
-
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
-
+  HomeScreen({Key? key}) : super(key: key);
+  final sittingController = Get.find<HomeController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(actions:  [
+          DarkModeWidget(sittingController:sittingController),
+          LocalizationWidget(sittingController:sittingController)
+        ]),
         body: Align(
             alignment: Alignment.center,
             child: SizedBox(
@@ -18,35 +22,29 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  // if(Platform.iOS)Text('hello', style: Theme.of(context).textTheme.headlineMedium,),
                   ElevatedButton(
                       onPressed: () {
                         Get.offNamed(Routes.loginScreen);
                       },
-                      child:  const Text(
-                       'Authentication'
-                      )),
+                      child: const Text('Authentication')),
                   const SizedBox(height: 10),
                   ElevatedButton(
                       onPressed: () {
                         Get.offNamed(Routes.profileScreen);
                       },
                       child: const Text(
-
                         'Profile',
                       )),
                   const SizedBox(height: 10),
                   ElevatedButton(
                       onPressed: () {},
                       child: const Text(
-
                         'Crud',
                       )),
                   const SizedBox(height: 10),
                   ElevatedButton(
                       onPressed: () {},
                       child: const Text(
-
                         'Current location',
                       )),
                 ],

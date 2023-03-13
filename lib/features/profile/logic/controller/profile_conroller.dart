@@ -14,17 +14,6 @@ class ProfileController extends GetxController {
   var profilePhoto = '';
   var profileEmail = 'khairiahalayyafi@gmail.com'.obs;
 
-  //change the Language to arabic
-  late bool changeLanguage = false;
-
-  //Change Theme
-  late bool isDarkTheme = false;
-  Rx<String> currentModeName = ''.obs;
-
-  //Turn Off Notifications
-  late bool turnOffNotifications = false;
-
-
   //Password icon
   bool isVisibility = false;
 
@@ -41,9 +30,6 @@ class ProfileController extends GetxController {
   ///////////////////onInit///////////////////////////
   @override
   void onInit() {
-    // getEmail();
-    // getPhone();
-    // getName();
     getUserInfo();
     super.onInit();
   }
