@@ -1,4 +1,4 @@
-import 'package:auth_crud_map_template/home/controller/sitting_controller.dart';
+import 'package:auth_crud_map_template/home/controller/home_controller.dart';
 import 'package:auth_crud_map_template/home/view/widget/darkmode_widget.dart';
 import 'package:auth_crud_map_template/home/view/widget/localization_widget.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +7,7 @@ import 'package:auth_crud_map_template/core/routes/route.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
-  final sittingController = Get.find<SittingController>();
+  final sittingController = Get.find<HomeController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(

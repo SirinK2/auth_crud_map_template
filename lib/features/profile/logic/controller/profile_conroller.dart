@@ -1,12 +1,10 @@
 import 'package:auth_crud_map_template/core/constants/keys.dart';
 import 'package:auth_crud_map_template/features/profile/model/profile_model.dart';
-import 'package:auth_crud_map_template/features/profile/repo/profile_repo.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-
-
-import '../../../core/routes/route.dart';
+import '../../../../core/routes/route.dart';
+import '../repo/profile_repo.dart';
 
 class ProfileController extends GetxController {
   ProfileRepository profileRepository = ProfileRepository();
