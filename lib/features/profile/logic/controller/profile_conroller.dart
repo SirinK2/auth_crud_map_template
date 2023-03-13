@@ -1,3 +1,4 @@
+import 'package:auth_crud_map_template/core/constants/app_image.dart';
 import 'package:auth_crud_map_template/core/constants/keys.dart';
 import 'package:auth_crud_map_template/features/profile/model/profile_model.dart';
 import 'package:flutter/material.dart';
@@ -9,10 +10,8 @@ import '../repo/profile_repo.dart';
 class ProfileController extends GetxController {
   ProfileRepository profileRepository = ProfileRepository();
   GetStorage authStorage = GetStorage();
-  var profileName = 'Khairiah'.obs;
-  var profilePhone = '0545401699'.obs;
-  var profilePhoto = '';
-  var profileEmail = 'khairiahalayyafi@gmail.com'.obs;
+
+  String? profilePhoto = '';
 
   //Password icon
   bool isVisibility = false;
@@ -33,25 +32,6 @@ class ProfileController extends GetxController {
     getUserInfo();
     super.onInit();
   }
-  ///////////////////////////////////////////////////
-
-//get Email to Personal Info
-  Future<void> getEmail() async {
-    emailController.text = profileEmail.toString();
-    update();
-  }
-
-//get Phone to Personal Info
-  Future<void> getPhone() async {
-    phoneController.text = profilePhone.toString();
-    update();
-  }
-
-  //get Name to Personal Info
-  Future<void> getName() async {
-    nameController.text = profileName.toString();
-    update();
-  }
 
   //fun for Password icon
   void visibility() {
@@ -62,16 +42,12 @@ class ProfileController extends GetxController {
 
   UserModel? getUserInfo()  {
      var user = profileRepository.getUserInfo(
-       authStorage.read(AppKeys.authKey)
+       authStorage.read(AppKeys.authKey) ?? ''
      );
-     nameController.text = "${user?.displayName}";
-     emailController.text = "${user?.email}";
-     profilePhoto = "${user?.photoURL}";
+     nameController.text = user?.displayName ?? 'Hello user';
+     emailController.text = user?.email ?? 'example@gmail.com';
+     profilePhoto = user?.photoURL;
 
-     print('phoneNumber : ${user?.phoneNumber}');
-     print('email : ${user?.email}');
-     print('displayName : ${user?.displayName}');
-     print('photoURL : ${user?.photoURL}');
      return user;
   }
 

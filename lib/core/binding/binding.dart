@@ -1,3 +1,4 @@
+import 'package:auth_crud_map_template/features/crud/logic/controller/product_controller.dart';
 import 'package:auth_crud_map_template/home/controller/home_controller.dart';
 import 'package:get/get.dart';
 import '../../features/auth/logic/controller/auth_controller.dart';
@@ -9,5 +10,6 @@ class Binding implements Bindings {
     Get.put(AuthController());
     Get.put(HomeController());
     Get.lazyPut(() => ProfileController());
+    Get.lazyPut(() => ProductController());
   }
 }
