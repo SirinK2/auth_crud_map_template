@@ -13,6 +13,7 @@ class SignUpScreen extends StatelessWidget {
 
   final authController = Get.put(AuthController());
   final formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
@@ -77,9 +78,8 @@ class SignUpScreen extends StatelessWidget {
                         ),
                         TextFieldWidget(
                           controller: authController.passwordController,
-                          obscureText: authController.isVisibility ? false : true,
-
-
+                          obscureText:
+                              authController.isVisibility ? false : true,
                           validator: (value) {
                             if (value.toString().isEmpty) {
                               return 'Enter your Password';
@@ -93,18 +93,16 @@ class SignUpScreen extends StatelessWidget {
                             }
                           },
                           suffixIcon: IconButton(
-                            onPressed: () {
-                              authController.visibility();
-                            },
-                            icon: authController.isVisibility
-                                ? const Icon(
-                              Icons.visibility_off,
-                            )
-                                : const Icon(
-                              Icons.visibility,
-
-                          )),
-                                   
+                              onPressed: () {
+                                authController.visibility();
+                              },
+                              icon: authController.isVisibility
+                                  ? const Icon(
+                                      Icons.visibility_off,
+                                    )
+                                  : const Icon(
+                                      Icons.visibility,
+                                    )),
                           prefixIcon: const Icon(
                             Icons.lock,
                           ),
@@ -112,8 +110,8 @@ class SignUpScreen extends StatelessWidget {
                         ),
                         TextFieldWidget(
                           controller: authController.checkPasswordController,
-                          obscureText: authController.isVisibility ? false : true,
-
+                          obscureText:
+                              authController.isVisibility ? false : true,
                           validator: (value) {
                             if (value.toString().isEmpty) {
                               return 'Enter your Password';
@@ -127,18 +125,16 @@ class SignUpScreen extends StatelessWidget {
                             }
                           },
                           suffixIcon: IconButton(
-                            onPressed: () {
-                              authController.visibility();
-                            },
-                            icon: authController.isVisibility
-                                ? const Icon(
-                              Icons.visibility_off,
-                            )
-                                : const Icon(
-                              Icons.visibility,
-                            )),
-
-
+                              onPressed: () {
+                                authController.visibility();
+                              },
+                              icon: authController.isVisibility
+                                  ? const Icon(
+                                      Icons.visibility_off,
+                                    )
+                                  : const Icon(
+                                      Icons.visibility,
+                                    )),
                           prefixIcon: const Icon(
                             Icons.lock,
                           ),
@@ -154,7 +150,10 @@ class SignUpScreen extends StatelessWidget {
                         ),
                         ElevatedButton(
                           onPressed: () async {
-                            // authController.signInWithEmail(, password)
+                            await authController.signUpWithEmail(
+                                authController.emailController.text,
+                                authController.passwordController.text,
+                                authController.nameController.text);
                           },
                           child: const Text('Signup'),
                         ),
@@ -180,6 +179,6 @@ class SignUpScreen extends StatelessWidget {
               ])),
         ),
       );
-  });
+    });
   }
 }

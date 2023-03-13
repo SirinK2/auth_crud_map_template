@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'core/localization/translations/translations_map.dart';
-import 'features/shop/view/screen/shop_screen.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -31,8 +30,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeController().themeDataGet,
       theme: ThemeApp.lightTheme,
       darkTheme: ThemeApp.darkTheme,
-      home: ShopScreen(),
-      // initialRoute: Routes.homeScreen,
+      initialRoute: Routes.homeScreen,
       getPages: AppRoutes.routes,
     );
   }

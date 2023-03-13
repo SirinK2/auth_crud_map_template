@@ -5,6 +5,7 @@ import 'package:auth_crud_map_template/features/auth/view/screen/otp_phone_scree
 import 'package:auth_crud_map_template/features/auth/view/screen/signup_screen.dart';
 import 'package:auth_crud_map_template/features/auth/view/screen/successfully_screen.dart';
 import 'package:auth_crud_map_template/features/auth/view/screen/terms_and_conditions_screen.dart';
+import 'package:auth_crud_map_template/features/crud/view/screen/shop_screen.dart';
 import 'package:auth_crud_map_template/features/profile/view/screen/new_pasword_screen.dart';
 import 'package:auth_crud_map_template/features/profile/view/screen/perssonal_information.dart';
 import 'package:auth_crud_map_template/home/view/screen/home_screen.dart';
@@ -60,8 +61,8 @@ class AppRoutes {
         page: () =>  PersonalInformationScreen(),
         binding: Binding()),
     GetPage(
-        name: Routes.personalInformation,
-        page: () =>  PersonalInformationScreen(),
+        name: Routes.shopScreen,
+        page: () =>  ShopScreen(),
         binding: Binding()),
   ];
 }
