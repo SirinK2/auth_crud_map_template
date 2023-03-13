@@ -12,6 +12,8 @@ class TextFieldWidget extends StatelessWidget {
   final String? numCode;
   final String? hintText;
   final bool? enabled;
+  final keyboardType;
+  final maxLine;
 
   const TextFieldWidget({
     required this.controller,
@@ -24,6 +26,9 @@ class TextFieldWidget extends StatelessWidget {
     this.enabled,
     this.hintText,
     this.text,
+    this.keyboardType,
+    this.maxLine,
+
     Key? key,
   }) : super(key: key);
 
@@ -51,16 +56,21 @@ class TextFieldWidget extends StatelessWidget {
               style: theme.titleSmall,
               controller: controller,
               obscureText: obscureText,
+              keyboardType: keyboardType,
               cursorColor: mainColor,
-              keyboardType: TextInputType.text,
+
+              maxLines:maxLine ,
+
               validator: (value) => validator(value),
               decoration: InputDecoration(
+
                 hintText: hintText,
                 labelStyle: theme.bodySmall,
                 labelText: label,
                 prefixIcon: prefixIcon,
                 prefixText: numCode,
                 suffixIcon: suffixIcon,
+
               ),
             ),
           ],

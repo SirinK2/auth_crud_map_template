@@ -12,7 +12,7 @@ class CardItemWidget extends StatelessWidget {
         child: GridView.builder(
           itemCount: 6,
           gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-              childAspectRatio: .8,
+              childAspectRatio: 0.8,
               mainAxisSpacing: 9.0,
               crossAxisSpacing: 15.0,
               maxCrossAxisExtent: 214),
@@ -22,31 +22,23 @@ class CardItemWidget extends StatelessWidget {
                 children: [
                   Stack(
                     children: [
-                      Image.asset(AppImages.editImage),
+                      Container(
+                          height: 150,
+                          width: 300,
+                          child: Image.asset(
+                            AppImages.editImage,
+                            fit: BoxFit.fill,
+                          )),
                       Padding(
                         padding: const EdgeInsets.only(right: 8, top: 8),
                         child: Align(
                           alignment: Alignment.topRight,
-                          child: Container(
-                            color:
-                                Theme.of(context).primaryColor.withOpacity(0.5),
-                            child: Icon(Icons.favorite_outline),
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        bottom: 2,
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 8),
-                          child: Container(
-                            color:
-                                Theme.of(context).primaryColor.withOpacity(0.5),
-                            child: Text("kkkkkkjjjjjjjjjj"),
-                          ),
+                          child: Icon(Icons.favorite_outline),
                         ),
                       ),
                     ],
                   ),
+                  Text("name product"),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Row(

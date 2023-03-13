@@ -5,6 +5,8 @@ import 'package:auth_crud_map_template/features/auth/view/screen/otp_phone_scree
 import 'package:auth_crud_map_template/features/auth/view/screen/signup_screen.dart';
 import 'package:auth_crud_map_template/features/auth/view/screen/successfully_screen.dart';
 import 'package:auth_crud_map_template/features/auth/view/screen/terms_and_conditions_screen.dart';
+import 'package:auth_crud_map_template/features/crud/view/screen/add_product_screen.dart';
+import 'package:auth_crud_map_template/features/crud/view/screen/admin_screen.dart';
 import 'package:auth_crud_map_template/features/crud/view/screen/shop_screen.dart';
 import 'package:auth_crud_map_template/features/profile/view/screen/new_pasword_screen.dart';
 import 'package:auth_crud_map_template/features/profile/view/screen/perssonal_information.dart';
@@ -64,6 +66,16 @@ class AppRoutes {
         name: Routes.shopScreen,
         page: () =>  ShopScreen(),
         binding: Binding()),
+
+    GetPage(
+        name: Routes.adminScreen,
+        page: () =>  AdminScreen(),
+        binding: Binding()),
+
+    GetPage(
+        name: Routes.addProductScreen,
+        page: () =>  AddProductScreen(),
+        binding: Binding()),
   ];
 }
 
@@ -80,5 +92,6 @@ class Routes {
   static const logInWithPhoneScreen = '/login_with_phone_screen';
   static const personalInformation = '/personal_information';
   static const shopScreen = '/shop_screen';
-
+  static const adminScreen = '/admin_screen';
+  static const addProductScreen = '/add_product_screen';
 }
