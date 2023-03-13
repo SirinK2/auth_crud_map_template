@@ -1,6 +1,4 @@
-import 'package:auth_crud_map_template/core/constants/colors_app.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class ProfileWidget extends StatelessWidget {
   const ProfileWidget({Key? key, required this.onTap, required this.text})

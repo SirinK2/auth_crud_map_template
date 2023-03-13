@@ -7,7 +7,7 @@ import 'package:auth_crud_map_template/features/auth/view/screen/successfully_sc
 import 'package:auth_crud_map_template/features/auth/view/screen/terms_and_conditions_screen.dart';
 import 'package:auth_crud_map_template/features/profile/view/screen/new_pasword_screen.dart';
 import 'package:auth_crud_map_template/features/profile/view/screen/perssonal_information.dart';
-import 'package:auth_crud_map_template/home_screen.dart';
+import 'package:auth_crud_map_template/home/view/screen/home_screen.dart';
 import 'package:get/get.dart';
 import '../../features/profile/view/screen/profile_screen.dart';
 import '../binding/binding.dart';
@@ -16,7 +16,8 @@ class AppRoutes {
   static final routes = [
     GetPage(
       name: Routes.homeScreen,
-      page: () => const HomeScreen(),
+      page: () =>  HomeScreen(),
+      binding: Binding()
     ),
     GetPage(
         name: Routes.loginScreen,
