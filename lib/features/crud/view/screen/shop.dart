@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import '../../logic/controller/product_controller.dart';
 import '../../model/product_model.dart';
 
-class ShopScreen extends StatelessWidget {
-  ShopScreen({Key? key}) : super(key: key);
+class ShopScreenA extends StatelessWidget {
+  ShopScreenA({Key? key}) : super(key: key);
   final ProductController productController = Get.find<ProductController>();
 
   @override
