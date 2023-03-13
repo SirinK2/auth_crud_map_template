@@ -9,6 +9,9 @@ class ProductController extends GetxController{
 
   TextEditingController searchTextController = TextEditingController();
 
+  TextEditingController nameProductTextController = TextEditingController();
+  TextEditingController priceProductTextController = TextEditingController();
+  TextEditingController productDescriptionTextController = TextEditingController();
 
   addProduct(ProductModel productModel) async {
     await _productRepository.addProduct(productModel);

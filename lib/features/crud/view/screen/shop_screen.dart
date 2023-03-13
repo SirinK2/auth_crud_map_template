@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import '../../../../core/routes/route.dart';
 import '../widget/card_item_widget.dart';
 import '../widget/search_widget.dart';
 
@@ -15,7 +17,9 @@ class ShopScreen extends StatelessWidget {
           style: Theme.of(context).textTheme.headlineLarge,
         ),
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.person)),
+          IconButton(onPressed: () {
+            Get.toNamed(Routes.adminScreen);
+          }, icon: Icon(Icons.person)),
         ],
       ),
       body: Column(
